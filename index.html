@@ -3,56 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kriyansh Travels - Best Cab Service in Ahmedabad</title>
+  <title>Kriyansh Travels - Premium Cab Service in Ahmedabad</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: #f4f6f9; color: #333; line-height: 1.6; padding-bottom: 90px; }
+    .header { background: linear-gradient(135deg, #0d47a1, #1976d2); color: white; text-align: center; padding: 35px 20px 25px; }
+    .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px; }
+    .header p { font-size: 15px; opacity: 0.95; }
+    .container { max-width: 700px; margin: -15px auto 20px; padding: 0 15px; }
+    .card { background: white; border-radius: 14px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .card-title { font-size: 18px; font-weight: 700; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
+    .local-title { color: #1565c0; border-bottom: 2px solid #e3f2fd; padding-bottom: 8px; }
+    .outstation-title { color: #2e7d32; border-bottom: 2px solid #e8f5e9; padding-bottom: 8px; }
+    .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 10px; }
+    .feature-item { background: #f8f9fa; border: 1px solid #edf2f7; border-radius: 8px; padding: 12px; font-size: 14px; text-align: center; }
+    .price-list { list-style: none; }
+    .price-list li { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed #e2e8f0; font-size: 15px; }
+    .price-list li:last-child { border-bottom: none; }
+    .price-tag { font-weight: 700; color: #0d47a1; background: #e3f2fd; padding: 4px 10px; border-radius: 6px; font-size: 14px; }
+    .note-box { background: #fffde7; border-left: 4px solid #fbc02d; padding: 14px; border-radius: 6px; font-size: 13px; color: #616161; margin-top: 15px; }
+    .footer-actions { position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 12px 20px; box-shadow: 0 -4px 12px rgba(0,0,0,0.1); display: flex; gap: 12px; justify-content: center; z-index: 1000; }
+    .btn { flex: 1; max-width: 200px; padding: 13px; text-align: center; text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .btn-call { background: #0d47a1; color: white; }
+    .btn-wa { background: #25d366; color: white; }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px;">
+<body>
 
-  <div style="max-width: 800px; margin: auto; background: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+  <div class="header">
+    <h1>🚖 Kriyansh Travels</h1>
+    <p>अहमदाबाद • गांधीनगर • ऑल गुजरात टूर</p>
+    <p style="font-size: 13px; margin-top: 4px; opacity: 0.85;">24x7 सुरक्षित, स्वच्छ एवं विश्वसनीय AC कैब सर्विस</p>
+  </div>
+
+  <div class="container">
     
-    <div style="text-align: center; margin-bottom: 25px;">
-      <h1 style="color: #0d47a1; margin-bottom: 5px;">🚖 Kriyansh Travels</h1>
-      <p style="color: #666; font-size: 16px; margin-top: 0;">अहमदाबाद & गांधीनगर | 24x7 सुरक्षित एवं आरामदायक AC सेडान सेवा</p>
+    <!-- Vehicle Info -->
+    <div class="card" style="margin-top: 15px;">
+      <div class="card-title" style="color: #333;">🚗 हमारी फ्लीट & सुविधाएं</div>
+      <p style="font-size: 14px; color: #555;">अत्यधिक आरामदायक सेडान कार (Hyundai Aura Prime AC) जिसमें सफर बने हमेशा सुहाना।</p>
+      <div class="features-grid">
+        <div class="feature-item">❄️ 100% चिल्ड रियर AC</div>
+        <div class="feature-item">🧳 बड़ा बूट स्पेस (लगेज)</div>
+        <div class="feature-item">🧼 नियमित सैनिटाइज्ड कार</div>
+        <div class="feature-item">⏱️ समय पर ऑन-टाइम पिकअप</div>
+      </div>
     </div>
 
-    <!-- Local City Package -->
-    <div style="background: #f4f7fb; border-left: 5px solid #1976d2; border-radius: 6px; padding: 18px; margin-bottom: 20px;">
-      <h3 style="margin-top: 0; color: #1565c0; font-size: 18px;">📍 लोकल सिटी पैकेज (City Rides)</h3>
-      <ul style="line-height: 1.8; margin-bottom: 0; padding-left: 20px;">
-        <li><strong>शॉर्ट राइड (Point-to-Point):</strong> ₹16 / किमी <em>(न्यूनतम किराया ₹300)</em></li>
-        <li><strong>4 घंटे / 40 किमी पैकेज:</strong> ₹900</li>
-        <li><strong>8 घंटे / 80 किमी पैकेज:</strong> ₹1,700</li>
-        <li style="color: #555;"><em>अतिरिक्त दूरी: ₹14/किमी | अतिरिक्त समय: ₹100/घंटा</em></li>
+    <!-- City Rates -->
+    <div class="card">
+      <div class="card-title local-title">📍 लोकल सिटी पैकेज (अहमदाबाद / गांधीनगर)</div>
+      <ul class="price-list">
+        <li><span>पॉइंट-टू-पॉइंट (शॉर्ट ट्रिप)</span> <span class="price-tag">₹16 / किमी</span></li>
+        <li><span>4 घंटे / 40 किमी पैकेज</span> <span class="price-tag">₹900</span></li>
+        <li><span>8 घंटे / 80 किमी पैकेज</span> <span class="price-tag">₹1,700</span></li>
       </ul>
-    </div>
-
-    <!-- Outstation Package -->
-    <div style="background: #f4f7fb; border-left: 5px solid #2e7d32; border-radius: 6px; padding: 18px; margin-bottom: 20px;">
-      <h3 style="margin-top: 0; color: #2e7d32; font-size: 18px;">🛣️ आउटस्टेशन राउंड ट्रिप (बाहर गांव)</h3>
-      <ul style="line-height: 1.8; margin-bottom: 0; padding-left: 20px;">
-        <li><strong>किराया:</strong> ₹12 / किमी</li>
-        <li><strong>न्यूनतम रनिंग:</strong> 250 किमी प्रति दिन</li>
-        <li><strong>ड्राइवर भत्ता (Night/Day DA):</strong> ₹300 / दिन</li>
-      </ul>
-    </div>
-
-    <!-- Terms & Conditions -->
-    <div style="background: #fff8e1; border: 1px solid #ffe082; border-radius: 6px; padding: 12px 16px; margin-bottom: 25px;">
-      <strong style="color: #b78103;">📌 नियम व शर्तें:</strong>
-      <p style="margin: 6px 0 0 0; font-size: 14px; line-height: 1.6; color: #5d4037;">
-        • टोल टैक्स, स्टेट टैक्स एवं पार्किंग शुल्क ग्राहक द्वारा अलग से देय होगा।<br>
-        • रनिंग और समय पिकअप लोकेशन से शुरू होकर ड्रॉप लोकेशन पर समाप्त माना जाएगा।
+      <p style="font-size: 12px; color: #777; margin-top: 8px;">
+        * न्यूनतम किराया ₹300 | अतिरिक्त समय: ₹100/घंटा | अतिरिक्त दूरी: ₹14/किमी
       </p>
     </div>
 
-    <!-- WhatsApp & Call Button -->
-    <div style="text-align: center; margin-top: 20px;">
-      <a href="https://wa.me/919725766190?text=नमस्ते%2C%20मुझे%20Kriyansh%20Travels%20से%20कैब%20बुक%20करनी%20है।" 
-         target="_blank" 
-         style="background-color: #25d366; color: #ffffff; padding: 14px 28px; text-decoration: none; font-size: 16px; font-weight: bold; border-radius: 30px; display: inline-block; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
-         💬 व्हाट्सएप पर बुकिंग करें
-      </a>
+    <!-- Outstation Rates -->
+    <div class="card">
+      <div class="card-title outstation-title">🛣️ आउटस्टेशन राउंड ट्रिप (बाहर गांव)</div>
+      <ul class="price-list">
+        <li><span>किराया (प्रति किमी)</span> <span class="price-tag" style="background:#e8f5e9; color:#2e7d32;">₹12 / किमी</span></li>
+        <li><span>न्यूनतम दूरी (प्रति दिन)</span> <span class="price-tag" style="background:#e8f5e9; color:#2e7d32;">250 किमी / दिन</span></li>
+        <li><span>ड्राइवर DA (नाइट/डे अलाउंस)</span> <span class="price-tag" style="background:#e8f5e9; color:#2e7d32;">₹300 / दिन</span></li>
+      </ul>
     </div>
 
+    <!-- Terms -->
+    <div class="note-box">
+      <strong>📌 आवश्यक जानकारी:</strong><br>
+      • टोल टैक्स, स्टेट टैक्स एवं पार्किंग शुल्क कस्टमर द्वारा वास्तविक पर्ची के अनुसार देय होगा।<br>
+      • किलोमीटर एवं समय गणना पिकअप पॉइंट से शुरू होकर ड्रॉप लोकेशन पर समाप्त होगी।
+    </div>
+
+  </div>
+
+  <!-- Bottom Action Buttons -->
+  <div class="footer-actions">
+    <a href="tel:9725766190" class="btn btn-call">📞 कॉल करें</a>
+    <a href="https://wa.me/919725766190?text=नमस्ते%2C%20मुझे%20Kriyansh%20Travels%20से%20कैब%20बुक%20करनी%20है।" class="btn btn-wa">💬 व्हाट्सएप</a>
   </div>
 
 </body>
