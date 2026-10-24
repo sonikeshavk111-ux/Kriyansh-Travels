@@ -3,89 +3,326 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kriyansh Travels - Premium Cab Service in Ahmedabad</title>
+  <title>Kriyansh Travels | Ahmedabad & Gandhinagar Premium Cab Service</title>
+  <meta name="description" content="Safe, Affordable & Clean AC Sedan Cab Service in Ahmedabad, Gandhinagar and all Gujarat tour by Kriyansh Travels.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    body { background-color: #f4f6f9; color: #333; line-height: 1.6; padding-bottom: 90px; }
-    .header { background: linear-gradient(135deg, #0d47a1, #1976d2); color: white; text-align: center; padding: 35px 20px 25px; }
-    .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px; }
-    .header p { font-size: 15px; opacity: 0.95; }
-    .container { max-width: 700px; margin: -15px auto 20px; padding: 0 15px; }
-    .card { background: white; border-radius: 14px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
-    .card-title { font-size: 18px; font-weight: 700; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
-    .local-title { color: #1565c0; border-bottom: 2px solid #e3f2fd; padding-bottom: 8px; }
-    .outstation-title { color: #2e7d32; border-bottom: 2px solid #e8f5e9; padding-bottom: 8px; }
-    .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 10px; }
-    .feature-item { background: #f8f9fa; border: 1px solid #edf2f7; border-radius: 8px; padding: 12px; font-size: 14px; text-align: center; }
-    .price-list { list-style: none; }
-    .price-list li { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed #e2e8f0; font-size: 15px; }
-    .price-list li:last-child { border-bottom: none; }
-    .price-tag { font-weight: 700; color: #0d47a1; background: #e3f2fd; padding: 4px 10px; border-radius: 6px; font-size: 14px; }
-    .note-box { background: #fffde7; border-left: 4px solid #fbc02d; padding: 14px; border-radius: 6px; font-size: 13px; color: #616161; margin-top: 15px; }
-    .footer-actions { position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 12px 20px; box-shadow: 0 -4px 12px rgba(0,0,0,0.1); display: flex; gap: 12px; justify-content: center; z-index: 1000; }
-    .btn { flex: 1; max-width: 200px; padding: 13px; text-align: center; text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 8px; }
-    .btn-call { background: #0d47a1; color: white; }
-    .btn-wa { background: #25d366; color: white; }
+    :root {
+      --primary: #0f172a;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --success: #16a34a;
+      --warning: #f59e0b;
+      --bg-light: #f8fafc;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; padding-bottom: 95px; -webkit-font-smoothing: antialiased; }
+
+    /* Top Brand Bar */
+    .top-nav {
+      background: #ffffff;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .brand-logo { font-size: 20px; font-weight: 800; color: var(--accent); letter-spacing: -0.5px; }
+    .status-badge {
+      font-size: 11px;
+      font-weight: 700;
+      background: #dcfce7;
+      color: #15803d;
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .status-dot { width: 7px; height: 7px; background: #22c55e; border-radius: 50%; display: inline-block; }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.94), rgba(30, 58, 138, 0.92)), 
+                  url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
+      color: #ffffff;
+      text-align: center;
+      padding: 45px 20px 40px;
+    }
+    .hero-tag {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(5px);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      margin-bottom: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .hero h1 { font-size: 32px; font-weight: 800; line-height: 1.25; margin-bottom: 10px; }
+    .hero p { font-size: 15px; opacity: 0.9; max-width: 500px; margin: 0 auto; }
+
+    .main-wrap { max-width: 680px; margin: -25px auto 0; padding: 0 16px; }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+      border: 1px solid var(--border);
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    /* Car Showcase */
+    .car-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 14px;
+    }
+    .car-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+    .car-title { font-size: 20px; font-weight: 800; color: var(--primary); }
+    .car-type { font-size: 13px; font-weight: 600; color: var(--accent); background: #eff6ff; padding: 3px 10px; border-radius: 6px; }
+    .car-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 14px; }
+    
+    .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .feature-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Pricing Lists */
+    .price-table { width: 100%; border-collapse: collapse; margin-top: 5px; }
+    .price-table tr { border-bottom: 1px dashed #e2e8f0; }
+    .price-table tr:last-child { border-bottom: none; }
+    .price-table td { padding: 13px 4px; font-size: 14px; }
+    .price-table .item-name { font-weight: 600; color: var(--text-main); }
+    .price-table .item-detail { font-size: 12px; color: var(--text-muted); display: block; margin-top: 2px; }
+    .price-table .item-rate { text-align: right; font-weight: 800; font-size: 15px; color: var(--accent); white-space: nowrap; }
+    .outstation-rate { color: var(--success) !important; }
+
+    /* Route Cards */
+    .routes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px; }
+    .route-box {
+      border: 1px solid var(--border);
+      background: #fdfefe;
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+    }
+    .route-name { font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+    .route-price { font-size: 14px; font-weight: 800; color: var(--accent); }
+
+    /* Terms */
+    .terms-box {
+      background: #fffbeb;
+      border-left: 4px solid var(--warning);
+      padding: 14px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #92400e;
+      line-height: 1.6;
+    }
+
+    /* Bottom Fixed Booking Bar */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      padding: 12px 18px;
+      display: flex;
+      gap: 12px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+      z-index: 1000;
+    }
+    .btn {
+      flex: 1;
+      padding: 14px 0;
+      border-radius: 35px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-call { background: var(--primary); color: #ffffff; }
+    .btn-wa { background: #25d366; color: #ffffff; }
+    .btn:active { transform: scale(0.98); }
   </style>
 </head>
 <body>
 
-  <div class="header">
-    <h1>🚖 Kriyansh Travels</h1>
-    <p>अहमदाबाद • गांधीनगर • ऑल गुजरात टूर</p>
-    <p style="font-size: 13px; margin-top: 4px; opacity: 0.85;">24x7 सुरक्षित, स्वच्छ एवं विश्वसनीय AC कैब सर्विस</p>
+  <!-- Top Sticky Bar -->
+  <div class="top-nav">
+    <div class="brand-logo">🚖 Kriyansh Travels</div>
+    <div class="status-badge"><span class="status-dot"></span> 24x7 बुकिंग चालू</div>
   </div>
 
-  <div class="container">
-    
-    <!-- Vehicle Info -->
-    <div class="card" style="margin-top: 15px;">
-      <div class="card-title" style="color: #333;">🚗 हमारी फ्लीट & सुविधाएं</div>
-      <p style="font-size: 14px; color: #555;">अत्यधिक आरामदायक सेडान कार (Hyundai Aura Prime AC) जिसमें सफर बने हमेशा सुहाना।</p>
+  <!-- Hero Header -->
+  <div class="hero">
+    <span class="hero-tag">अहमदाबाद • गांधीनगर • गुजरात दर्शन</span>
+    <h1>आरामदायक & सुरक्षित सफर</h1>
+    <p>प्रीमियम Hyundai Aura AC सेडान कार के साथ आपकी हर यात्रा बने समय पर और यादगार।</p>
+  </div>
+
+  <div class="main-wrap">
+
+    <!-- Vehicle Showcase -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="Hyundai Aura Cab" class="car-image">
+      <div class="car-head">
+        <div class="car-title">Hyundai Aura Prime (Sedan)</div>
+        <div class="car-type">100% AC</div>
+      </div>
+      <p class="car-desc">फैमिली ट्रिप्स, आउटस्टेशन और कॉर्पोरेट राइड्स के लिए लग्जरी स्पेस और कंफर्ट।</p>
+      
       <div class="features-grid">
-        <div class="feature-item">❄️ 100% चिल्ड रियर AC</div>
-        <div class="feature-item">🧳 बड़ा बूट स्पेस (लगेज)</div>
-        <div class="feature-item">🧼 नियमित सैनिटाइज्ड कार</div>
-        <div class="feature-item">⏱️ समय पर ऑन-टाइम पिकअप</div>
+        <div class="feature-item">❄️ चिल्ड रियर AC वेंट्स</div>
+        <div class="feature-item">🧳 बड़ा लगेज बूट स्पेस</div>
+        <div class="feature-item">🧼 साफ व सैनिटाइज्ड कार</div>
+        <div class="feature-item">⏱️ हमेशा समय पर पिकअप</div>
       </div>
     </div>
 
-    <!-- City Rates -->
+    <!-- Local Rates Card -->
     <div class="card">
-      <div class="card-title local-title">📍 लोकल सिटी पैकेज (अहमदाबाद / गांधीनगर)</div>
-      <ul class="price-list">
-        <li><span>पॉइंट-टू-पॉइंट (शॉर्ट ट्रिप)</span> <span class="price-tag">₹16 / किमी</span></li>
-        <li><span>4 घंटे / 40 किमी पैकेज</span> <span class="price-tag">₹900</span></li>
-        <li><span>8 घंटे / 80 किमी पैकेज</span> <span class="price-tag">₹1,700</span></li>
-      </ul>
-      <p style="font-size: 12px; color: #777; margin-top: 8px;">
-        * न्यूनतम किराया ₹300 | अतिरिक्त समय: ₹100/घंटा | अतिरिक्त दूरी: ₹14/किमी
+      <div class="section-title" style="color: var(--accent);">
+        📍 लोकल सिटी पैकेज (City Travel)
+      </div>
+      <table class="price-table">
+        <tr>
+          <td>
+            <span class="item-name">पॉइंट-टू-पॉइंट (शॉर्ट राइड)</span>
+            <span class="item-detail">शहर के अंदर कहीं भी आने-जाने के लिए</span>
+          </td>
+          <td class="item-rate">₹16 / किमी<br><small style="font-size:11px; color:#888;">(न्यूनतम ₹300)</small></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="item-name">4 घंटे / 40 किमी पैकेज</span>
+            <span class="item-detail">शॉपिंग, मीटिंग्स या पर्सनल काम के लिए</span>
+          </td>
+          <td class="item-rate">₹900</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="item-name">8 घंटे / 80 किमी पैकेज</span>
+            <span class="item-detail">फुल डे सिटी विजिट व बिजनेस टूर्स</span>
+          </td>
+          <td class="item-rate">₹1,700</td>
+        </tr>
+      </table>
+      <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">
+        * पैकेज से अधिक समय: ₹100/घंटा | अतिरिक्त रनिंग: ₹14/किमी
       </p>
     </div>
 
-    <!-- Outstation Rates -->
+    <!-- Outstation Rates Card -->
     <div class="card">
-      <div class="card-title outstation-title">🛣️ आउटस्टेशन राउंड ट्रिप (बाहर गांव)</div>
-      <ul class="price-list">
-        <li><span>किराया (प्रति किमी)</span> <span class="price-tag" style="background:#e8f5e9; color:#2e7d32;">₹12 / किमी</span></li>
-        <li><span>न्यूनतम दूरी (प्रति दिन)</span> <span class="price-tag" style="background:#e8f5e9; color:#2e7d32;">250 किमी / दिन</span></li>
-        <li><span>ड्राइवर DA (नाइट/डे अलाउंस)</span> <span class="price-tag" style="background:#e8f5e9; color:#2e7d32;">₹300 / दिन</span></li>
-      </ul>
+      <div class="section-title" style="color: var(--success);">
+        🛣️ आउटस्टेशन राउंड ट्रिप (बाहर गांव)
+      </div>
+      <table class="price-table">
+        <tr>
+          <td>
+            <span class="item-name">किराया प्रति किलोमीटर</span>
+            <span class="item-detail">हाईवे राइड्स (आना-जाना दोनों)</span>
+          </td>
+          <td class="item-rate outstation-rate">₹12 / किमी</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="item-name">न्यूनतम रनिंग सीमा</span>
+            <span class="item-detail">प्रति दिन की न्यूनतम गणना</span>
+          </td>
+          <td class="item-rate outstation-rate">250 किमी / दिन</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="item-name">ड्राइवर अलाउंस (DA)</span>
+            <span class="item-detail">प्रति दिन ड्राइवर भोजन/नाइट चार्ज</span>
+          </td>
+          <td class="item-rate outstation-rate">₹300 / दिन</td>
+        </tr>
+      </table>
     </div>
 
-    <!-- Terms -->
-    <div class="note-box">
-      <strong>📌 आवश्यक जानकारी:</strong><br>
+    <!-- Popular Routes -->
+    <div class="card">
+      <div class="section-title" style="color: var(--primary);">
+        🏛️ लोकप्रिय टूर रूट्स (अहमदाबाद से)
+      </div>
+      <div class="routes-grid">
+        <div class="route-box">
+          <div class="route-name">स्टैच्यू ऑफ यूनिटी</div>
+          <div class="route-price">₹12/किमी + टोल</div>
+        </div>
+        <div class="route-box">
+          <div class="route-name">द्वारका - सोमनाथ</div>
+          <div class="route-price">₹12/किमी + टोल</div>
+        </div>
+        <div class="route-box">
+          <div class="route-name">अंबाजी / माउंट आबू</div>
+          <div class="route-price">₹12/किमी + टोल</div>
+        </div>
+        <div class="route-box">
+          <div class="route-name">एयरपोर्ट पिक & ड्रॉप</div>
+          <div class="route-price">फिक्स बेस्ट रेट्स</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Terms Card -->
+    <div class="terms-box">
+      <strong>📌 आवश्यक नियम व जानकारी:</strong><br>
       • टोल टैक्स, स्टेट टैक्स एवं पार्किंग शुल्क कस्टमर द्वारा वास्तविक पर्ची के अनुसार देय होगा।<br>
-      • किलोमीटर एवं समय गणना पिकअप पॉइंट से शुरू होकर ड्रॉप लोकेशन पर समाप्त होगी।
+      • किलोमीटर एवं समय की गणना आपके पिकअप लोकेशन से शुरू होकर ड्रॉप लोकेशन पर समाप्त होगी।
     </div>
 
   </div>
 
-  <!-- Bottom Action Buttons -->
-  <div class="footer-actions">
+  <!-- Bottom Booking Bar -->
+  <div class="bottom-bar">
     <a href="tel:9725766190" class="btn btn-call">📞 कॉल करें</a>
-    <a href="https://wa.me/919725766190?text=नमस्ते%2C%20मुझे%20Kriyansh%20Travels%20से%20कैब%20बुक%20करनी%20है।" class="btn btn-wa">💬 व्हाट्सएप</a>
+    <a href="https://wa.me/919725766190?text=नमस्ते%2C%20मुझे%20Kriyansh%20Travels%20से%20कैब%20बुक%20करनी%20है।" class="btn btn-wa">💬 व्हाट्सएप बुकिंग</a>
   </div>
 
 </body>
