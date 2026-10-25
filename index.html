@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="gu">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kriyansh Travels | Ahmedabad & Gandhinagar Cab Service</title>
-  <meta name="description" content="Kriyansh Travels - Safe, Verified and Premium AC Sedan Service in Ahmedabad with Hyundai Aura Prime.">
+  <meta name="description" content="Kriyansh Travels - Premium AC Sedan Cab Service in Ahmedabad & Gandhinagar.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Gujarati:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -23,7 +23,7 @@
       --text-muted: #64748b;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', 'Noto Sans Gujarati', sans-serif; }
     body { background-color: var(--bg); color: var(--text-dark); line-height: 1.6; padding-bottom: 95px; }
 
     /* Top Nav */
@@ -39,18 +39,29 @@
       z-index: 1000;
     }
     .brand-title { font-size: 20px; font-weight: 800; color: var(--accent); }
-    .badge-live {
-      background: #dcfce7;
-      color: #15803d;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 20px;
+    
+    .lang-switcher {
       display: flex;
-      align-items: center;
-      gap: 5px;
+      background: #f1f5f9;
+      border-radius: 20px;
+      padding: 2px;
+      border: 1px solid var(--border);
     }
-    .dot { width: 7px; height: 7px; background: #22c55e; border-radius: 50%; }
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 16px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+    .lang-btn.active {
+      background: var(--accent);
+      color: #ffffff;
+    }
 
     /* Hero Header */
     .hero {
@@ -58,23 +69,23 @@
                   url('car%20frount-side.jpg.jpeg') center/cover no-repeat;
       color: #ffffff;
       text-align: center;
-      padding: 40px 18px 35px;
+      padding: 35px 18px 30px;
     }
     .hero-badge {
       display: inline-block;
       background: rgba(255, 255, 255, 0.18);
       backdrop-filter: blur(4px);
-      padding: 5px 14px;
+      padding: 4px 14px;
       border-radius: 20px;
       font-size: 12px;
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       border: 1px solid rgba(255, 255, 255, 0.25);
     }
-    .hero h1 { font-size: 30px; font-weight: 800; margin-bottom: 6px; }
+    .hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; }
     .hero p { font-size: 14px; opacity: 0.92; }
 
-    .container { max-width: 650px; margin: -20px auto 20px; padding: 0 16px; }
+    .container { max-width: 650px; margin: -15px auto 20px; padding: 0 16px; }
 
     /* Cards */
     .card {
@@ -94,22 +105,7 @@
       margin-bottom: 14px;
     }
 
-    /* Video Player */
-    .video-box {
-      width: 100%;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #000;
-      margin-bottom: 15px;
-    }
-    .video-box video {
-      width: 100%;
-      max-height: 400px;
-      display: block;
-      border-radius: 12px;
-    }
-
-    /* Photos Showcase */
+    /* Main Car Showcase */
     .main-car-photo {
       width: 100%;
       height: 250px;
@@ -132,28 +128,51 @@
       border: 1px solid var(--border);
     }
 
-    .vehicle-specs {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 6px;
+    /* Video Player */
+    .video-box {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      margin-bottom: 15px;
     }
-    .vehicle-name { font-size: 19px; font-weight: 800; color: var(--primary); }
-    .vehicle-tag { font-size: 12px; font-weight: 700; color: var(--accent); background: #eff6ff; padding: 3px 8px; border-radius: 6px; }
+    .video-box video {
+      width: 100%;
+      max-height: 400px;
+      display: block;
+      border-radius: 12px;
+    }
 
-    /* Features Grid */
-    .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
-    .feature-item {
+    /* Feature Cards with Photos */
+    .feature-card {
+      display: flex;
+      gap: 14px;
       background: #f8fafc;
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 10px 12px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-dark);
-      display: flex;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 12px;
       align-items: center;
-      gap: 8px;
+    }
+    .feature-card:last-child { margin-bottom: 0; }
+    .feature-thumb {
+      width: 95px;
+      height: 85px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+    }
+    .feature-info h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 3px;
+    }
+    .feature-info p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
     }
 
     /* Tariff Table */
@@ -177,7 +196,7 @@
       line-height: 1.6;
     }
 
-    /* Fixed Bottom Actions */
+    /* Bottom Actions */
     .bottom-bar {
       position: fixed;
       bottom: 0;
@@ -212,117 +231,137 @@
   <!-- Top Sticky Bar -->
   <div class="top-nav">
     <div class="brand-title">🚖 Kriyansh Travels</div>
-    <div class="badge-live"><span class="dot"></span> 24x7 बुकिंग चालू</div>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('hi')">हिन्दी</button>
+      <button class="lang-btn" onclick="setLang('gu')">ગુજરાતી</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
   </div>
 
   <!-- Hero Header -->
   <div class="hero">
-    <span class="hero-badge">अहमदाबाद • गांधीनगर • गुजरात दर्शन</span>
-    <h1>सटीक, सुरक्षित एवं स्वच्छ कैब</h1>
-    <p>नई Hyundai Aura Prime AC सेडान के साथ आपका हर सफर बने आरामदायक।</p>
+    <span class="hero-badge" id="heroBadge">अहमदाबाद • गांधीनगर • गुजरात दर्शन</span>
+    <h1 id="heroTitle">सटीक, सुरक्षित एवं स्वच्छ कैब</h1>
+    <p id="heroSub">नई Hyundai Aura Prime AC सेडान के साथ आपका हर सफर बने आरामदायक।</p>
   </div>
 
   <div class="container">
 
     <!-- Original Vehicle Showcase -->
     <div class="card">
-      <div class="card-title" style="color: var(--primary);">
-        🚗 हमारी गाड़ी (Original Photos)
+      <div class="card-title" style="color: var(--primary);" id="fleetTitle">
+        🚗 हमारी प्रीमियम गाड़ी (Original Photos)
       </div>
 
-      <!-- Main Front Photo -->
       <img src="car%20frount-side.jpg.jpeg" alt="Kriyansh Travels Aura Front" class="main-car-photo">
 
-      <!-- Side Photos Grid -->
       <div class="photo-grid">
         <img src="car%20side-view.jpg.jpeg" alt="Aura Side Full" class="sub-photo">
         <img src="car%20left-side.jpg.jpeg" alt="Aura Left Side" class="sub-photo">
       </div>
 
-      <!-- Vehicle Video Tour -->
-      <div class="card-title" style="font-size: 15px; margin-top: 10px; margin-bottom: 8px;">
+      <div class="card-title" style="font-size: 15px; margin-top: 10px; margin-bottom: 8px;" id="videoTitle">
         🎥 गाड़ी का 360° वीडियो वॉक-अराउंड:
       </div>
       <div class="video-box">
         <video controls playsinline preload="metadata">
           <source src="car-vidio.mp4.mp4" type="video/mp4">
-          आपका ब्राउज़र वीडियो सपोर्ट नहीं करता।
+          ब्राउज़र वीडियो सपोर्ट नहीं करता।
         </video>
       </div>
+    </div>
 
-      <div class="vehicle-specs">
-        <div class="vehicle-name">Hyundai Aura Prime (2026 AC Sedan)</div>
-        <div class="vehicle-tag">कमर्शियल रजिस्टर्ड</div>
+    <!-- Feature Spotlight with Photos -->
+    <div class="card">
+      <div class="card-title" style="color: #0f766e;" id="featuresHead">
+        ✨ गाड़ी की मुख्य सुविधाएं (With Photos)
       </div>
-      <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
-        परिवार, आउटस्टेशन और बिज़नेस ट्रिप्स के लिए पूरी तरह साफ और आरामदायक कार।
-      </p>
 
-      <div class="features-grid">
-        <div class="feature-item">❄️ चिल्ड रियर AC वेंट्स</div>
-        <div class="feature-item">🧳 पर्याप्त बूट व लगेज स्पेस</div>
-        <div class="feature-item">🧼 नियमित सैनिटाइज्ड कार</div>
-        <div class="feature-item">⏱️ समय पर ऑन-टाइम पिकअप</div>
+      <!-- Boot Space -->
+      <div class="feature-card">
+        <img src="car-boot.jpg" alt="Boot Space" class="feature-thumb" onerror="this.src='https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=300&q=80'">
+        <div class="feature-info">
+          <h4 id="bootTitle">🧳 402L बड़ा बूट स्पेस</h4>
+          <p id="bootDesc">सीएनजी सिलेंडर के बावजूद ट्रॉली बैग और सामान के लिए भरपूर जगह। फैमिली टूर के लिए बेस्ट।</p>
+        </div>
+      </div>
+
+      <!-- Rear AC -->
+      <div class="feature-card">
+        <img src="car-ac.jpg" alt="Rear AC Vents" class="feature-thumb" onerror="this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=300&q=80'">
+        <div class="feature-info">
+          <h4 id="acTitle">❄️ रियर AC वेंट्स (चिल्ड कूलिंग)</h4>
+          <p id="acDesc">पीछे बैठने वाले यात्रियों के लिए डेडिकेटेड AC वेंट्स, जिससे गर्मी में भी मिले तुरंत ठंडी हवा।</p>
+        </div>
+      </div>
+
+      <!-- Comfortable Seats -->
+      <div class="feature-card">
+        <img src="car-seats.jpg" alt="Comfortable Interior" class="feature-thumb" onerror="this.src='https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=300&q=80'">
+        <div class="feature-info">
+          <h4 id="seatTitle">🛋️ आरामदायक सीट्स & एक्स्ट्रा लेगरूम</h4>
+          <p id="seatDesc">लंबे सफर में बिना थकान के बैठने के लिए कुशनदार सेडान सीट्स और खुला पैर रखने का स्पेस।</p>
+        </div>
       </div>
     </div>
 
     <!-- Local City Rates -->
     <div class="card">
-      <div class="card-title" style="color: var(--accent);">
+      <div class="card-title" style="color: var(--accent);" id="localTitle">
         📍 लोकल सिटी पैकेज (City Travel)
       </div>
       <table class="rate-table">
         <tr>
           <td>
-            <span class="rate-title">पॉइंट-टू-पॉइंट (शॉर्ट ट्रिप)</span>
-            <span class="rate-sub">शहर के अंदर आने-जाने के लिए</span>
+            <span class="rate-title" id="r1Title">पॉइंट-टू-पॉइंट (शॉर्ट ट्रिप)</span>
+            <span class="rate-sub" id="r1Sub">शहर के अंदर आने-जाने के लिए</span>
           </td>
-          <td class="rate-price">₹16 / किमी<br><small style="font-size:11px; color:#888;">(न्यूनतम ₹300)</small></td>
+          <td class="rate-price" id="r1Price">₹16 / किमी<br><small style="font-size:11px; color:#888;">(न्यूनतम ₹300)</small></td>
         </tr>
         <tr>
           <td>
-            <span class="rate-title">4 घंटे / 40 किमी पैकेज</span>
-            <span class="rate-sub">शॉपिंग व लोकल मीटिंग्स</span>
+            <span class="rate-title" id="r2Title">4 घंटे / 40 किमी पैकेज</span>
+            <span class="rate-sub" id="r2Sub">शॉपिंग व लोकल मीटिंग्स</span>
           </td>
           <td class="rate-price">₹900</td>
         </tr>
         <tr>
           <td>
-            <span class="rate-title">8 घंटे / 80 किमी पैकेज</span>
-            <span class="rate-sub">फुल डे सिटी राइड</span>
+            <span class="rate-title" id="r3Title">8 घंटे / 80 किमी पैकेज</span>
+            <span class="rate-sub" id="r3Sub">फुल डे सिटी राइड</span>
           </td>
           <td class="rate-price">₹1,700</td>
         </tr>
       </table>
-      <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">
+      <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;" id="localExtra">
         * पैकेज से अधिक समय: ₹100/घंटा | अतिरिक्त दूरी: ₹14/किमी
       </p>
     </div>
 
     <!-- Outstation Rates -->
     <div class="card">
-      <div class="card-title" style="color: var(--success);">
+      <div class="card-title" style="color: var(--success);" id="outTitle">
         🛣️ आउटस्टेशन राउंड ट्रिप (बाहर गांव)
       </div>
       <table class="rate-table">
         <tr>
           <td>
-            <span class="rate-title">किराया प्रति किलोमीटर</span>
-            <span class="rate-sub">हाईवे राइड्स (आना-जाना दोनों)</span>
+            <span class="rate-title" id="o1Title">किराया प्रति किलोमीटर</span>
+            <span class="rate-sub" id="o1Sub">हाईवे राइड्स (आना-जाना दोनों)</span>
           </td>
-          <td class="rate-price outstation-price">₹12 / किमी</td>
+          <td class="rate-price outstation-price" id="o1Price">₹12 / किमी</td>
         </tr>
         <tr>
           <td>
-            <span class="rate-title">न्यूनतम रनिंग गणना</span>
-            <span class="rate-sub">प्रति दिन की न्यूनतम सीमा</span>
+            <span class="rate-title" id="o2Title">न्यूनतम रनिंग गणना</span>
+            <span class="rate-sub" id="o2Sub">प्रति दिन की न्यूनतम सीमा</span>
           </td>
           <td class="rate-price outstation-price">250 किमी / दिन</td>
         </tr>
         <tr>
           <td>
-            <span class="rate-title">ड्राइवर अलाउंस (DA)</span>
-            <span class="rate-sub">भोजन व नाइट चार्ज</span>
+            <span class="rate-title" id="o3Title">ड्राइवर अलाउंस (DA)</span>
+            <span class="rate-sub" id="o3Sub">भोजन व नाइट चार्ज</span>
           </td>
           <td class="rate-price outstation-price">₹300 / दिन</td>
         </tr>
@@ -330,7 +369,7 @@
     </div>
 
     <!-- Terms -->
-    <div class="terms-box">
+    <div class="terms-box" id="termsBox">
       <strong>📌 आवश्यक नियम व जानकारी:</strong><br>
       • टोल टैक्स, स्टेट टैक्स एवं पार्किंग शुल्क कस्टमर द्वारा वास्तविक पर्ची के अनुसार देय होगा।<br>
       • किलोमीटर एवं समय की गणना आपके पिकअप लोकेशन से शुरू होकर ड्रॉप पर समाप्त होगी।
@@ -340,9 +379,167 @@
 
   <!-- Bottom Actions -->
   <div class="bottom-bar">
-    <a href="tel:9725766190" class="btn btn-call">📞 कॉल करें</a>
-    <a href="https://wa.me/919725766190?text=नमस्ते%2C%20मुझे%20Kriyansh%20Travels%20से%20कैब%20बुक%20करनी%20है।" class="btn btn-wa">💬 व्हाट्सएप बुकिंग</a>
+    <a href="tel:9725766190" class="btn btn-call" id="callBtn">📞 कॉल करें</a>
+    <a href="https://wa.me/919725766190?text=नमस्ते%2C%20मुझे%20Kriyansh%20Travels%20से%20कैब%20बुक%20करनी%20है।" class="btn btn-wa" id="waBtn">💬 व्हाट्सएप बुकिंग</a>
   </div>
+
+  <script>
+    const data = {
+      hi: {
+        badge: "अहमदाबाद • गांधीनगर • गुजरात दर्शन",
+        heroTitle: "सटीक, सुरक्षित एवं स्वच्छ कैब",
+        heroSub: "नई Hyundai Aura Prime AC सेडान के साथ आपका हर सफर बने आरामदायक।",
+        fleetTitle: "🚗 हमारी प्रीमियम गाड़ी (Original Photos)",
+        videoTitle: "🎥 गाड़ी का 360° वीडियो वॉक-अराउंड:",
+        featuresHead: "✨ गाड़ी की मुख्य सुविधाएं (With Photos)",
+        bootTitle: "🧳 402L बड़ा बूट स्पेस",
+        bootDesc: "सीएनजी सिलेंडर के बावजूद ट्रॉली बैग और सामान के लिए भरपूर जगह। फैमिली टूर के लिए बेस्ट।",
+        acTitle: "❄️ रियर AC वेंट्स (चिल्ड कूलिंग)",
+        acDesc: "पीछे बैठने वाले यात्रियों के लिए अलग AC वेंट्स, जिससे गर्मी में भी मिले तुरंत तेज ठंडक।",
+        seatTitle: "🛋️ आरामदायक सीट्स & एक्स्ट्रा लेगरूम",
+        seatDesc: "लंबे सफर में बिना थकान के बैठने के लिए कुशनदार सेडान सीट्स और खुला पैर रखने का स्पेस।",
+        localTitle: "📍 लोकल सिटी पैकेज (City Travel)",
+        r1Title: "पॉइंट-टू-पॉइंट (शॉर्ट ट्रिप)",
+        r1Sub: "शहर के अंदर आने-जाने के लिए",
+        r1Price: "₹16 / किमी<br><small style='font-size:11px; color:#888;'>(न्यूनतम ₹300)</small>",
+        r2Title: "4 घंटे / 40 किमी पैकेज",
+        r2Sub: "शॉपिंग व लोकल मीटिंग्स",
+        r3Title: "8 घंटे / 80 किमी पैकेज",
+        r3Sub: "फुल डे सिटी राइड",
+        localExtra: "* पैकेज से अधिक समय: ₹100/घंटा | अतिरिक्त दूरी: ₹14/किमी",
+        outTitle: "🛣️ आउटस्टेशन राउंड ट्रिप (बाहर गांव)",
+        o1Title: "किराया प्रति किलोमीटर",
+        o1Sub: "हाईवे राइड्स (आना-जाना दोनों)",
+        o1Price: "₹12 / किमी",
+        o2Title: "न्यूनतम रनिंग गणना",
+        o2Sub: "प्रति दिन की न्यूनतम सीमा",
+        o2Price: "250 किमी / दिन",
+        o3Title: "ड्राइवर अलाउंस (DA)",
+        o3Sub: "भोजन व नाइट चार्ज",
+        o3Price: "₹300 / दिन",
+        terms: "<strong>📌 आवश्यक नियम व जानकारी:</strong><br>• टोल टैक्स, स्टेट टैक्स एवं पार्किंग शुल्क कस्टमर द्वारा वास्तविक पर्ची के अनुसार देय होगा।<br>• किलोमीटर एवं समय की गणना आपके पिकअप लोकेशन से शुरू होकर ड्रॉप पर समाप्त होगी।",
+        callBtn: "📞 कॉल करें",
+        waBtn: "💬 व्हाट्सएप बुकिंग",
+        waMsg: "नमस्ते, मुझे Kriyansh Travels से कैब बुक करनी है।"
+      },
+      gu: {
+        badge: "અમદાવાદ • ગાંધીનગર • ગુજરાત દર્શન",
+        heroTitle: "સટીક, સુરક્ષિત અને સ્વચ્છ કેબ",
+        heroSub: "નવી Hyundai Aura Prime AC સેડાન સાથે તમારી મુસાફરી બનશે આરામદાયક.",
+        fleetTitle: "🚗 અમારી પ્રીમિયમ ગાડી (Original Photos)",
+        videoTitle: "🎥 ગાડીનો 360° વિડીયો વૉક-અરાઉન્ડ:",
+        featuresHead: "✨ ગાડીની મુખ્ય સુવિધાઓ (With Photos)",
+        bootTitle: "🧳 402L મોટો બૂટ સ્પેસ (ડિક્કી)",
+        bootDesc: "સીએનજી સિલિન્ડર છતાં ટ્રોલી બેગ અને સામાન માટે પૂરતી જગ્યા. ફેમિલી ટૂર માટે ઉત્તમ.",
+        acTitle: "❄️ રીઅર AC વેન્ટ્સ (ચિલ્ડ કૂલિંગ)",
+        acDesc: "પાછળ બેસતા મુસાફરો માટે ખાસ AC વેન્ટ્સ, જેથી ગરમીમાં પણ મળે ઝડપી ઠંડક.",
+        seatTitle: "🛋️ આરામદાયક સીટ્સ અને વધારાનો લેગરૂમ",
+        seatDesc: "લાંબી મુસાફરીમાં થાક વગર બેસવા માટે ગાદીવાળી સેડાન સીટ્સ અને પૂરતી જગ્યા.",
+        localTitle: "📍 લોકલ સિટી પેકેજ (City Travel)",
+        r1Title: "પોઈન્ટ-ટુ-પોઈન્ટ (શોર્ટ ટ્રિપ)",
+        r1Sub: "શહેરમાં જવા-આવવા માટે",
+        r1Price: "₹16 / કિમી<br><small style='font-size:11px; color:#888;'>(ન્યૂનતમ ₹300)</small>",
+        r2Title: "4 કલાક / 40 કિમી પેકેજ",
+        r2Sub: "શોપિંગ અને લોકલ મીટિંગ્સ",
+        r3Title: "8 કલાક / 80 કિમી પેકેજ",
+        r3Sub: "ફુલ ડે સિટી રાઈડ",
+        localExtra: "* વધારાનો સમય: ₹100/કલાક | વધારાનું અંતર: ₹14/કિમી",
+        outTitle: "🛣️ આઉટસ્ટેશન રાઉન્ડ ટ્રિપ (બહાર ગામ)",
+        o1Title: "ભાડું પ્રતિ કિલોમીટર",
+        o1Sub: "હાઈવે રાઈડ્સ (આવવા-જવાનું)",
+        o1Price: "₹12 / કિમી",
+        o2Title: "ન્યૂનતમ રનિંગ ગણતરી",
+        o2Sub: "પ્રતિ દિવસની લિમિટ",
+        o2Price: "250 કિમી / દિવસ",
+        o3Title: "ડ્રાઈવર ભથ્થું (DA)",
+        o3Sub: "નાઈટ/ડે એલાઉન્સ",
+        o3Price: "₹300 / દિવસ",
+        terms: "<strong>📌 જરૂરી નિયમો અને માહિતી:</strong><br>• ટોલ ટેક્સ, સ્ટેટ ટેક્સ અને પાર્કિંગ ચાર્જ ગ્રાહકે અલગથી ચૂકવવાનો રહેશે.<br>• કિલોમીટર અને સમયની ગણતરી તમારા પિકઅપ પોઈન્ટથી શરૂ થઈને ડ્રોપ પોઈન્ટ પર પૂર્ણ થશે.",
+        callBtn: "📞 કોલ કરો",
+        waBtn: "💬 વોટ્સએપ",
+        waMsg: "હેલો, મને Kriyansh Travels માંથી કેબ બુક કરવી છે."
+      },
+      en: {
+        badge: "Ahmedabad • Gandhinagar • Gujarat Tours",
+        heroTitle: "Reliable, Safe & Clean Cab Service",
+        heroSub: "Experience premium comfort with our brand-new Hyundai Aura Prime AC Sedan.",
+        fleetTitle: "🚗 Our Premium Fleet (Original Photos)",
+        videoTitle: "🎥 360° Vehicle Walkaround Video:",
+        featuresHead: "✨ Vehicle Highlights (With Photos)",
+        bootTitle: "🧳 402L Generous Boot Space",
+        bootDesc: "Ample room for trolley bags and luggage despite CNG tank. Ideal for family vacations.",
+        acTitle: "❄️ Dedicated Rear AC Vents",
+        acDesc: "Independent AC airflow for rear passengers ensuring instant chilled cooling even in peak summer.",
+        seatTitle: "🛋️ Plush Ergonomic Seating & Legroom",
+        seatDesc: "Comfort-padded sedan seats with spacious legroom for long highway journeys without fatigue.",
+        localTitle: "📍 Local City Packages (Ahmedabad / Gandhinagar)",
+        r1Title: "Point-to-Point (Short Trips)",
+        r1Sub: "For intracity travels & commute",
+        r1Price: "₹16 / km<br><small style='font-size:11px; color:#888;'>(Min. ₹300)</small>",
+        r2Title: "4 Hours / 40 km Package",
+        r2Sub: "Shopping & short city meetings",
+        r3Title: "8 Hours / 80 km Package",
+        r3Sub: "Full-day city visit & corporate use",
+        localExtra: "* Extra time: ₹100/hr | Extra running: ₹14/km",
+        outTitle: "🛣️ Outstation Round Trips",
+        o1Title: "Per Kilometer Fare",
+        o1Sub: "Highway rides (both way calculation)",
+        o1Price: "₹12 / km",
+        o2Title: "Minimum Running Limit",
+        o2Sub: "Per calendar day minimum",
+        o2Price: "250 km / day",
+        o3Title: "Driver Allowance (DA)",
+        o3Sub: "Food & night accommodation",
+        o3Price: "₹300 / day",
+        terms: "<strong>📌 Terms & Conditions:</strong><br>• Toll taxes, state permit taxes, and parking charges are payable by the customer as per actual receipts.<br>• Kilometers and hours are calculated from garage pickup to final drop point.",
+        callBtn: "📞 Call Now",
+        waBtn: "💬 WhatsApp Booking",
+        waMsg: "Hello, I would like to book a cab with Kriyansh Travels."
+      }
+    };
+
+    function setLang(lang) {
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const d = data[lang];
+      document.getElementById('heroBadge').innerHTML = d.badge;
+      document.getElementById('heroTitle').innerHTML = d.heroTitle;
+      document.getElementById('heroSub').innerHTML = d.heroSub;
+      document.getElementById('fleetTitle').innerHTML = d.fleetTitle;
+      document.getElementById('videoTitle').innerHTML = d.videoTitle;
+      document.getElementById('featuresHead').innerHTML = d.featuresHead;
+      document.getElementById('bootTitle').innerHTML = d.bootTitle;
+      document.getElementById('bootDesc').innerHTML = d.bootDesc;
+      document.getElementById('acTitle').innerHTML = d.acTitle;
+      document.getElementById('acDesc').innerHTML = d.acDesc;
+      document.getElementById('seatTitle').innerHTML = d.seatTitle;
+      document.getElementById('seatDesc').innerHTML = d.seatDesc;
+      document.getElementById('localTitle').innerHTML = d.localTitle;
+      document.getElementById('r1Title').innerHTML = d.r1Title;
+      document.getElementById('r1Sub').innerHTML = d.r1Sub;
+      document.getElementById('r1Price').innerHTML = d.r1Price;
+      document.getElementById('r2Title').innerHTML = d.r2Title;
+      document.getElementById('r2Sub').innerHTML = d.r2Sub;
+      document.getElementById('r3Title').innerHTML = d.r3Title;
+      document.getElementById('r3Sub').innerHTML = d.r3Sub;
+      document.getElementById('localExtra').innerHTML = d.localExtra;
+      document.getElementById('outTitle').innerHTML = d.outTitle;
+      document.getElementById('o1Title').innerHTML = d.o1Title;
+      document.getElementById('o1Sub').innerHTML = d.o1Sub;
+      document.getElementById('o1Price').innerHTML = d.o1Price;
+      document.getElementById('o2Title').innerHTML = d.o2Title;
+      document.getElementById('o2Sub').innerHTML = d.o2Sub;
+      document.getElementById('o2Price').innerHTML = d.o2Price;
+      document.getElementById('o3Title').innerHTML = d.o3Title;
+      document.getElementById('o3Sub').innerHTML = d.o3Sub;
+      document.getElementById('o3Price').innerHTML = d.o3Price;
+      document.getElementById('termsBox').innerHTML = d.terms;
+      document.getElementById('callBtn').innerHTML = d.callBtn;
+      document.getElementById('waBtn').innerHTML = d.waBtn;
+      document.getElementById('waBtn').href = `https://wa.me/919725766190?text=${encodeURIComponent(d.waMsg)}`;
+    }
+  </script>
 
 </body>
 </html>
