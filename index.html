@@ -55,7 +55,7 @@
     /* Hero Header */
     .hero {
       background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(37, 99, 235, 0.9)), 
-                  url('car-front.jpg') center/cover no-repeat;
+                  url('car%20frount-side.jpg.jpeg') center/cover no-repeat;
       color: #ffffff;
       text-align: center;
       padding: 40px 18px 35px;
@@ -104,7 +104,7 @@
     }
     .video-box video {
       width: 100%;
-      max-height: 380px;
+      max-height: 400px;
       display: block;
       border-radius: 12px;
     }
@@ -112,7 +112,7 @@
     /* Photos Showcase */
     .main-car-photo {
       width: 100%;
-      height: 240px;
+      height: 250px;
       object-fit: cover;
       border-radius: 12px;
       margin-bottom: 10px;
@@ -231,21 +231,21 @@
       </div>
 
       <!-- Main Front Photo -->
-      <img src="car-front.jpg" alt="Kriyansh Travels Aura Front" class="main-car-photo" onerror="this.src='https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80'">
+      <img src="car%20frount-side.jpg.jpeg" alt="Kriyansh Travels Aura Front" class="main-car-photo">
 
-      <!-- Side & Rear Photos Grid -->
+      <!-- Side Photos Grid -->
       <div class="photo-grid">
-        <img src="car-side.jpg" alt="Aura Side Profile" class="sub-photo" onerror="this.style.display='none'">
-        <img src="car-rear.jpg" alt="Aura Rear Look" class="sub-photo" onerror="this.style.display='none'">
+        <img src="car%20side-view.jpg.jpeg" alt="Aura Side Full" class="sub-photo">
+        <img src="car%20left-side.jpg.jpeg" alt="Aura Left Side" class="sub-photo">
       </div>
 
-      <!-- Vehicle Walkaround Video -->
+      <!-- Vehicle Video Tour -->
       <div class="card-title" style="font-size: 15px; margin-top: 10px; margin-bottom: 8px;">
         🎥 गाड़ी का 360° वीडियो वॉक-अराउंड:
       </div>
       <div class="video-box">
         <video controls playsinline preload="metadata">
-          <source src="car-video.mp4" type="video/mp4">
+          <source src="car-vidio.mp4.mp4" type="video/mp4">
           आपका ब्राउज़र वीडियो सपोर्ट नहीं करता।
         </video>
       </div>
@@ -346,353 +346,3 @@
 
 </body>
 </html>
-
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kriyansh Travels | Ahmedabad & Gandhinagar Cab Service</title>
-  <meta name="description" content="Kriyansh Travels - Safe, Verified and Premium AC Sedan Service in Ahmedabad with Hyundai Aura Prime.">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --primary: #0f172a;
-      --accent: #2563eb;
-      --success: #16a34a;
-      --warning: #f59e0b;
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --border: #e2e8f0;
-      --text-dark: #0f172a;
-      --text-muted: #64748b;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
-    body { background-color: var(--bg); color: var(--text-dark); line-height: 1.6; padding-bottom: 95px; }
-
-    /* Top Nav */
-    .top-nav {
-      background: #ffffff;
-      padding: 12px 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .brand-title { font-size: 20px; font-weight: 800; color: var(--accent); }
-    .badge-live {
-      background: #dcfce7;
-      color: #15803d;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .dot { width: 7px; height: 7px; background: #22c55e; border-radius: 50%; }
-
-    /* Hero Header */
-    .hero {
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(37, 99, 235, 0.9)), 
-                  url('car-front.jpg') center/cover no-repeat;
-      color: #ffffff;
-      text-align: center;
-      padding: 40px 18px 35px;
-    }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.18);
-      backdrop-filter: blur(4px);
-      padding: 5px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-    .hero h1 { font-size: 30px; font-weight: 800; margin-bottom: 6px; }
-    .hero p { font-size: 14px; opacity: 0.92; }
-
-    .container { max-width: 650px; margin: -20px auto 20px; padding: 0 16px; }
-
-    /* Cards */
-    .card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-      border: 1px solid var(--border);
-    }
-    .card-title {
-      font-size: 17px;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 14px;
-    }
-
-    /* Video Player */
-    .video-box {
-      width: 100%;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #000;
-      margin-bottom: 15px;
-    }
-    .video-box video {
-      width: 100%;
-      max-height: 380px;
-      display: block;
-      border-radius: 12px;
-    }
-
-    /* Photos Showcase */
-    .main-car-photo {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 10px;
-      border: 1px solid var(--border);
-    }
-    .photo-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 15px;
-    }
-    .sub-photo {
-      width: 100%;
-      height: 130px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-    }
-
-    .vehicle-specs {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 6px;
-    }
-    .vehicle-name { font-size: 19px; font-weight: 800; color: var(--primary); }
-    .vehicle-tag { font-size: 12px; font-weight: 700; color: var(--accent); background: #eff6ff; padding: 3px 8px; border-radius: 6px; }
-
-    /* Features Grid */
-    .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
-    .feature-item {
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 10px 12px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-dark);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* Tariff Table */
-    .rate-table { width: 100%; border-collapse: collapse; }
-    .rate-table tr { border-bottom: 1px dashed var(--border); }
-    .rate-table tr:last-child { border-bottom: none; }
-    .rate-table td { padding: 12px 2px; font-size: 14px; }
-    .rate-title { font-weight: 600; color: var(--text-dark); }
-    .rate-sub { font-size: 12px; color: var(--text-muted); display: block; }
-    .rate-price { text-align: right; font-weight: 800; font-size: 15px; color: var(--accent); white-space: nowrap; }
-    .outstation-price { color: var(--success) !important; }
-
-    /* Terms */
-    .terms-box {
-      background: #fffbeb;
-      border-left: 4px solid var(--warning);
-      padding: 14px;
-      border-radius: 8px;
-      font-size: 13px;
-      color: #92400e;
-      line-height: 1.6;
-    }
-
-    /* Fixed Bottom Actions */
-    .bottom-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: #ffffff;
-      padding: 12px 18px;
-      display: flex;
-      gap: 12px;
-      box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
-      z-index: 1000;
-    }
-    .btn {
-      flex: 1;
-      padding: 13px 0;
-      border-radius: 30px;
-      text-align: center;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-    .btn-call { background: var(--primary); color: #ffffff; }
-    .btn-wa { background: #25d366; color: #ffffff; }
-  </style>
-</head>
-<body>
-
-  <!-- Top Sticky Bar -->
-  <div class="top-nav">
-    <div class="brand-title">🚖 Kriyansh Travels</div>
-    <div class="badge-live"><span class="dot"></span> 24x7 बुकिंग चालू</div>
-  </div>
-
-  <!-- Hero Header -->
-  <div class="hero">
-    <span class="hero-badge">अहमदाबाद • गांधीनगर • गुजरात दर्शन</span>
-    <h1>सटीक, सुरक्षित एवं स्वच्छ कैब</h1>
-    <p>नई Hyundai Aura Prime AC सेडान के साथ आपका हर सफर बने आरामदायक।</p>
-  </div>
-
-  <div class="container">
-
-    <!-- Original Vehicle Showcase -->
-    <div class="card">
-      <div class="card-title" style="color: var(--primary);">
-        🚗 हमारी गाड़ी (Original Photos)
-      </div>
-
-      <!-- Main Front Photo -->
-      <img src="car-front.jpg" alt="Kriyansh Travels Aura Front" class="main-car-photo" onerror="this.src='https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80'">
-
-      <!-- Side & Rear Photos Grid -->
-      <div class="photo-grid">
-        <img src="car-side.jpg" alt="Aura Side Profile" class="sub-photo" onerror="this.style.display='none'">
-        <img src="car-rear.jpg" alt="Aura Rear Look" class="sub-photo" onerror="this.style.display='none'">
-      </div>
-
-      <!-- Vehicle Walkaround Video -->
-      <div class="card-title" style="font-size: 15px; margin-top: 10px; margin-bottom: 8px;">
-        🎥 गाड़ी का 360° वीडियो वॉक-अराउंड:
-      </div>
-      <div class="video-box">
-        <video controls playsinline preload="metadata">
-          <source src="car-video.mp4" type="video/mp4">
-          आपका ब्राउज़र वीडियो सपोर्ट नहीं करता।
-        </video>
-      </div>
-
-      <div class="vehicle-specs">
-        <div class="vehicle-name">Hyundai Aura Prime (2026 AC Sedan)</div>
-        <div class="vehicle-tag">कमर्शियल रजिस्टर्ड</div>
-      </div>
-      <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
-        परिवार, आउटस्टेशन और बिज़नेस ट्रिप्स के लिए पूरी तरह साफ और आरामदायक कार।
-      </p>
-
-      <div class="features-grid">
-        <div class="feature-item">❄️ चिल्ड रियर AC वेंट्स</div>
-        <div class="feature-item">🧳 पर्याप्त बूट व लगेज स्पेस</div>
-        <div class="feature-item">🧼 नियमित सैनिटाइज्ड कार</div>
-        <div class="feature-item">⏱️ समय पर ऑन-टाइम पिकअप</div>
-      </div>
-    </div>
-
-    <!-- Local City Rates -->
-    <div class="card">
-      <div class="card-title" style="color: var(--accent);">
-        📍 लोकल सिटी पैकेज (City Travel)
-      </div>
-      <table class="rate-table">
-        <tr>
-          <td>
-            <span class="rate-title">पॉइंट-टू-पॉइंट (शॉर्ट ट्रिप)</span>
-            <span class="rate-sub">शहर के अंदर आने-जाने के लिए</span>
-          </td>
-          <td class="rate-price">₹16 / किमी<br><small style="font-size:11px; color:#888;">(न्यूनतम ₹300)</small></td>
-        </tr>
-        <tr>
-          <td>
-            <span class="rate-title">4 घंटे / 40 किमी पैकेज</span>
-            <span class="rate-sub">शॉपिंग व लोकल मीटिंग्स</span>
-          </td>
-          <td class="rate-price">₹900</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="rate-title">8 घंटे / 80 किमी पैकेज</span>
-            <span class="rate-sub">फुल डे सिटी राइड</span>
-          </td>
-          <td class="rate-price">₹1,700</td>
-        </tr>
-      </table>
-      <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">
-        * पैकेज से अधिक समय: ₹100/घंटा | अतिरिक्त दूरी: ₹14/किमी
-      </p>
-    </div>
-
-    <!-- Outstation Rates -->
-    <div class="card">
-      <div class="card-title" style="color: var(--success);">
-        🛣️ आउटस्टेशन राउंड ट्रिप (बाहर गांव)
-      </div>
-      <table class="rate-table">
-        <tr>
-          <td>
-            <span class="rate-title">किराया प्रति किलोमीटर</span>
-            <span class="rate-sub">हाईवे राइड्स (आना-जाना दोनों)</span>
-          </td>
-          <td class="rate-price outstation-price">₹12 / किमी</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="rate-title">न्यूनतम रनिंग गणना</span>
-            <span class="rate-sub">प्रति दिन की न्यूनतम सीमा</span>
-          </td>
-          <td class="rate-price outstation-price">250 किमी / दिन</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="rate-title">ड्राइवर अलाउंस (DA)</span>
-            <span class="rate-sub">भोजन व नाइट चार्ज</span>
-          </td>
-          <td class="rate-price outstation-price">₹300 / दिन</td>
-        </tr>
-      </table>
-    </div>
-
-    <!-- Terms -->
-    <div class="terms-box">
-      <strong>📌 आवश्यक नियम व जानकारी:</strong><br>
-      • टोल टैक्स, स्टेट टैक्स एवं पार्किंग शुल्क कस्टमर द्वारा वास्तविक पर्ची के अनुसार देय होगा।<br>
-      • किलोमीटर एवं समय की गणना आपके पिकअप लोकेशन से शुरू होकर ड्रॉप पर समाप्त होगी।
-    </div>
-
-  </div>
-
-  <!-- Bottom Actions -->
-  <div class="bottom-bar">
-    <a href="tel:9725766190" class="btn btn-call">📞 कॉल करें</a>
-    <a href="https://wa.me/919725766190?text=नमस्ते%2C%20मुझे%20Kriyansh%20Travels%20से%20कैब%20बुक%20करनी%20है।" class="btn btn-wa">💬 व्हाट्सएप बुकिंग</a>
-  </div>
-
-</body>
-</html>
-
