@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,45 +12,68 @@
 
   <style>
     :root {
-      --primary: #0f172a;
-      --accent: #2563eb;
-      --success: #16a34a;
-      --warning: #f59e0b;
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --border: #e2e8f0;
+      --primary: #0f2942;
+      --accent: #1d4ed8;
+      --nature: #15803d;
+      --nature-light: #ecfdf5;
+      --warning: #d97706;
+      --bg-gradient: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 50%, #f0f9ff 100%);
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --border: #cbd5e1;
+      --nature-border: #bbf7d0;
       --text-dark: #0f172a;
-      --text-muted: #64748b;
+      --text-muted: #475569;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', 'Noto Sans Gujarati', sans-serif; }
-    body { background-color: var(--bg); color: var(--text-dark); line-height: 1.6; padding-bottom: 95px; }
+    
+    body {
+      background: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding-bottom: 95px;
+      position: relative;
+    }
+
+    /* Subtle Botanical Leaf Watermark Pattern */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25 95 C 25 55, 65 25, 95 25 C 95 65, 65 95, 25 95 Z' fill='none' stroke='%2316a34a' stroke-width='1.2' stroke-opacity='0.07'/%3E%3Cpath d='M25 95 L 95 25' stroke='%2316a34a' stroke-width='1' stroke-opacity='0.07'/%3E%3Ccircle cx='15' cy='20' r='3' fill='%232563eb' fill-opacity='0.06'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: -1;
+    }
 
     /* Top Nav */
     .top-nav {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
       padding: 12px 18px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 2px solid #dbeafe;
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 10px rgba(15, 41, 66, 0.05);
     }
-    .brand-title { font-size: 20px; font-weight: 800; color: var(--accent); }
+    .brand-title { font-size: 20px; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 6px; }
+    .brand-title span { color: var(--nature); }
     
     .lang-switcher {
       display: flex;
       background: #f1f5f9;
       border-radius: 20px;
-      padding: 2px;
-      border: 1px solid var(--border);
+      padding: 3px;
+      border: 1px solid #cbd5e1;
     }
     .lang-btn {
       border: none;
       background: transparent;
-      padding: 5px 10px;
+      padding: 5px 11px;
       font-size: 12px;
       font-weight: 700;
       border-radius: 16px;
@@ -58,40 +81,44 @@
       color: var(--text-muted);
       transition: all 0.2s ease;
     }
-    .lang-btn.active { background: var(--accent); color: #ffffff; }
+    .lang-btn.active { background: linear-gradient(135deg, var(--accent), var(--nature)); color: #ffffff; box-shadow: 0 2px 6px rgba(29, 78, 216, 0.25); }
 
     /* Hero Header */
     .hero {
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(37, 99, 235, 0.9)), 
+      background: linear-gradient(135deg, rgba(15, 41, 66, 0.90), rgba(21, 128, 61, 0.85)), 
                   url('car%20frount-side.jpg.jpeg') center/cover no-repeat;
       color: #ffffff;
       text-align: center;
-      padding: 40px 18px 35px;
+      padding: 42px 18px 38px;
+      border-bottom: 4px solid #86efac;
     }
     .hero-badge {
       display: inline-block;
-      background: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(4px);
-      padding: 4px 14px;
+      padding: 5px 15px;
       border-radius: 20px;
       font-size: 12px;
       font-weight: 600;
       margin-bottom: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.35);
     }
-    .hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; }
-    .hero p { font-size: 14px; opacity: 0.92; }
+    .hero h1 { font-size: 27px; font-weight: 800; margin-bottom: 6px; text-shadow: 0 2px 6px rgba(0,0,0,0.25); }
+    .hero p { font-size: 14px; opacity: 0.95; }
 
-    .container { max-width: 650px; margin: -15px auto 20px; padding: 0 16px; }
+    .container { max-width: 660px; margin: -16px auto 20px; padding: 0 15px; }
 
-    /* Cards */
+    /* Cards with Botanical & Blue Accent Border */
     .card {
       background: var(--card-bg);
       border-radius: 16px;
       padding: 20px;
       margin-bottom: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-      border: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(15, 41, 66, 0.06);
+      border: 1.5px solid #dbeafe;
+      border-top: 3px solid var(--nature);
+      position: relative;
+      overflow: hidden;
     }
     .card-title {
       font-size: 17px;
@@ -100,61 +127,107 @@
       align-items: center;
       gap: 8px;
       margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1.5px dashed #cbd5e1;
     }
 
-    /* Auto Photo Grid (10 Slots) */
+    /* Auto Photo Grid */
     .dynamic-gallery {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
     .gallery-item {
       width: 100%;
       height: 135px;
       object-fit: cover;
       border-radius: 10px;
-      border: 1px solid var(--border);
+      border: 1.5px solid #e2e8f0;
     }
     .gallery-item.main-photo {
       grid-column: span 2;
       height: 230px;
     }
 
-    /* Auto Video Block (5 Slots) */
+    /* Auto Video Block */
     .video-unit { margin-bottom: 14px; }
     .video-unit:last-child { margin-bottom: 0; }
-    .video-box { width: 100%; border-radius: 12px; overflow: hidden; background: #000; }
+    .video-box { width: 100%; border-radius: 12px; overflow: hidden; background: #000; border: 1.5px solid #cbd5e1; }
     .video-box video { width: 100%; max-height: 380px; display: block; border-radius: 12px; }
-    .video-caption { font-size: 12px; font-weight: 600; color: var(--text-muted); margin-top: 4px; }
+    .video-caption { font-size: 12px; font-weight: 600; color: var(--text-muted); margin-top: 5px; }
 
     /* Trust Stats */
-    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px; text-align: center; }
-    .stat-box { background: #f8fafc; padding: 12px 8px; border-radius: 10px; border: 1px solid var(--border); }
-    .stat-num { font-size: 18px; font-weight: 800; color: var(--accent); }
-    .stat-lbl { font-size: 11px; color: var(--text-muted); font-weight: 600; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center; }
+    .stat-box { background: linear-gradient(180deg, #f8fafc, #f0fdf4); padding: 12px 8px; border-radius: 12px; border: 1px solid #bbf7d0; }
+    .stat-num { font-size: 18px; font-weight: 800; color: var(--nature); }
+    .stat-lbl { font-size: 11px; color: var(--text-dark); font-weight: 600; }
+
+    /* Quotation Summary Box */
+    .quote-summary {
+      background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+      border: 1.5px solid #93c5fd;
+      border-left: 5px solid var(--accent);
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 12px;
+    }
+    .quote-list { list-style: none; padding: 0; margin: 0; font-size: 13.5px; color: var(--text-dark); line-height: 1.75; }
+    .quote-list li strong { color: var(--primary); }
+    .night-rule-alert {
+      margin-top: 12px;
+      padding: 10px 12px;
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      border-left: 4px solid var(--warning);
+      border-radius: 8px;
+      font-size: 12.5px;
+      color: #78350f;
+      line-height: 1.55;
+    }
 
     /* Tariff Table */
     .rate-table { width: 100%; border-collapse: collapse; }
-    .rate-table tr { border-bottom: 1px dashed var(--border); }
+    .rate-table tr { border-bottom: 1px dashed #cbd5e1; }
     .rate-table tr:last-child { border-bottom: none; }
-    .rate-table td { padding: 12px 2px; font-size: 14px; }
-    .rate-title { font-weight: 600; color: var(--text-dark); }
-    .rate-sub { font-size: 12px; color: var(--text-muted); display: block; }
-    .rate-price { text-align: right; font-weight: 800; font-size: 15px; color: var(--accent); white-space: nowrap; }
-    .outstation-price { color: var(--success) !important; }
+    .rate-table td { padding: 12px 2px; font-size: 14px; vertical-align: top; }
+    .rate-title { font-weight: 700; color: var(--text-dark); display: block; }
+    .rate-sub { font-size: 12px; color: var(--text-muted); display: block; margin-top: 3px; line-height: 1.45; }
+    .rate-price { text-align: right; font-weight: 800; font-size: 15px; color: var(--accent); white-space: nowrap; padding-left: 10px; }
+    .outstation-price { color: var(--nature) !important; }
+
+    /* Popular Routes Detailed List */
+    .route-detail-list { list-style: none; padding: 0; margin: 0; }
+    .route-detail-item {
+      padding: 12px 0;
+      border-bottom: 1px dashed #cbd5e1;
+    }
+    .route-detail-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .route-detail-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .route-detail-fare { color: var(--nature); white-space: nowrap; font-size: 15.5px; }
+    .route-detail-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
 
     /* Tour Packages Grid */
-    .dest-tabs { display: flex; gap: 8px; margin-bottom: 12px; }
-    .dest-tab { background: #f1f5f9; border: 1px solid var(--border); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 700; color: var(--text-muted); }
-    .dest-tab.active { background: var(--primary); color: #fff; }
     .routes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .route-item { background: #fdfefe; border: 1px solid var(--border); padding: 12px; border-radius: 10px; }
+    .route-item { background: #ffffff; border: 1px solid #cbd5e1; padding: 12px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.02); }
     .route-dest { font-weight: 700; font-size: 13px; color: var(--primary); }
-    .route-tag { font-size: 11px; color: var(--success); font-weight: 600; margin-top: 2px; }
+    .route-tag { font-size: 11px; color: var(--nature); font-weight: 600; margin-top: 2px; }
 
     /* Reviews */
-    .review-card { background: #f8fafc; border: 1px solid var(--border); padding: 14px; border-radius: 12px; margin-bottom: 10px; }
+    .review-card { background: #f8fafc; border: 1px solid #e2e8f0; border-left: 3px solid var(--nature); padding: 14px; border-radius: 12px; margin-bottom: 10px; }
     .review-card:last-child { margin-bottom: 0; }
     .review-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
     .review-name { font-weight: 700; font-size: 13px; color: var(--primary); }
@@ -162,7 +235,7 @@
     .review-text { font-size: 12px; color: var(--text-muted); }
 
     /* FAQ */
-    .faq-item { border-bottom: 1px solid var(--border); padding: 10px 0; }
+    .faq-item { border-bottom: 1px solid #e2e8f0; padding: 10px 0; }
     .faq-item:last-child { border-bottom: none; }
     .faq-q { font-weight: 700; font-size: 13px; color: var(--primary); margin-bottom: 4px; }
     .faq-a { font-size: 12px; color: var(--text-muted); }
@@ -170,12 +243,13 @@
     /* Terms */
     .terms-box {
       background: #fffbeb;
+      border: 1px solid #fde68a;
       border-left: 4px solid var(--warning);
-      padding: 14px;
-      border-radius: 8px;
+      padding: 15px;
+      border-radius: 12px;
       font-size: 13px;
-      color: #92400e;
-      line-height: 1.6;
+      color: #78350f;
+      line-height: 1.65;
     }
 
     /* Bottom Actions */
@@ -184,11 +258,13 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
       padding: 12px 18px;
       display: flex;
       gap: 12px;
-      box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
+      box-shadow: 0 -4px 15px rgba(15, 41, 66, 0.08);
+      border-top: 1px solid #dbeafe;
       z-index: 1000;
     }
     .btn {
@@ -204,19 +280,19 @@
       justify-content: center;
       gap: 8px;
     }
-    .btn-call { background: var(--primary); color: #ffffff; }
-    .btn-wa { background: #25d366; color: #ffffff; }
+    .btn-call { background: linear-gradient(135deg, #0f2942, #1d4ed8); color: #ffffff; }
+    .btn-wa { background: linear-gradient(135deg, #16a34a, #22c55e); color: #ffffff; }
   </style>
 </head>
 <body>
 
   <!-- Top Sticky Nav -->
   <div class="top-nav">
-    <div class="brand-title">🚖 Kriyansh Travels</div>
+    <div class="brand-title">🚖 Kriyansh <span>Travels</span></div>
     <div class="lang-switcher">
-      <button class="lang-btn active" onclick="setLang('hi')">हिन्दी</button>
-      <button class="lang-btn" onclick="setLang('gu')">ગુજરાતી</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" onclick="setLang('hi', this)">हिन्दी</button>
+      <button class="lang-btn" onclick="setLang('gu', this)">ગુજરાતી</button>
+      <button class="lang-btn" onclick="setLang('en', this)">EN</button>
     </div>
   </div>
 
@@ -253,25 +329,15 @@
         📸 गाड़ी की असली तस्वीरें (Photo Gallery)
       </div>
       <div class="dynamic-gallery">
-        <!-- Photo 1 (Main View) -->
         <img src="car%20frount-side.jpg.jpeg" alt="Vehicle Front" class="gallery-item main-photo" onerror="this.src='photo1.jpg'; this.onerror=function(){this.style.display='none';}">
-        <!-- Photo 2 -->
         <img src="car%20side-view.jpg.jpeg" alt="Vehicle Side" class="gallery-item" onerror="this.src='photo2.jpg'; this.onerror=function(){this.style.display='none';}">
-        <!-- Photo 3 -->
         <img src="car%20left-side.jpg.jpeg" alt="Vehicle Angle" class="gallery-item" onerror="this.src='photo3.jpg'; this.onerror=function(){this.style.display='none';}">
-        <!-- Photo 4 -->
         <img src="car-boot.jpg" alt="Boot Space" class="gallery-item" onerror="this.src='photo4.jpg'; this.onerror=function(){this.style.display='none';}">
-        <!-- Photo 5 -->
         <img src="car-ac.jpg" alt="Rear AC" class="gallery-item" onerror="this.src='photo5.jpg'; this.onerror=function(){this.style.display='none';}">
-        <!-- Photo 6 -->
         <img src="car-interior.jpg" alt="Cabin" class="gallery-item" onerror="this.src='photo6.jpg'; this.onerror=function(){this.style.display='none';}">
-        <!-- Photo 7 -->
         <img src="photo7.jpg" alt="Fleet 7" class="gallery-item" onerror="this.style.display='none';">
-        <!-- Photo 8 -->
         <img src="photo8.jpg" alt="Fleet 8" class="gallery-item" onerror="this.style.display='none';">
-        <!-- Photo 9 -->
         <img src="photo9.jpg" alt="Fleet 9" class="gallery-item" onerror="this.style.display='none';">
-        <!-- Photo 10 -->
         <img src="photo10.jpg" alt="Fleet 10" class="gallery-item" onerror="this.style.display='none';">
       </div>
     </div>
@@ -282,7 +348,6 @@
         🎥 गाड़ी के वीडियो टूर (Video Gallery)
       </div>
 
-      <!-- Video 1 -->
       <div class="video-unit" id="vidUnit1">
         <div class="video-box">
           <video controls playsinline preload="metadata" onerror="document.getElementById('vidUnit1').style.display='none';">
@@ -293,7 +358,6 @@
         <div class="video-caption" id="vc1">गाड़ी का 360° वीडियो वॉक-अराउंड</div>
       </div>
 
-      <!-- Video 2 -->
       <div class="video-unit" id="vidUnit2">
         <div class="video-box">
           <video controls playsinline preload="metadata" onerror="document.getElementById('vidUnit2').style.display='none';">
@@ -304,7 +368,6 @@
         <div class="video-caption" id="vc2">केबिन व इंटीरियर राइड वीडियो</div>
       </div>
 
-      <!-- Video 3 -->
       <div class="video-unit" id="vidUnit3" style="display:none;">
         <div class="video-box">
           <video controls playsinline preload="metadata" onloadeddata="document.getElementById('vidUnit3').style.display='block';">
@@ -314,7 +377,6 @@
         <div class="video-caption">बूट स्पेस व लगेज लोडिंग वीडियो</div>
       </div>
 
-      <!-- Video 4 -->
       <div class="video-unit" id="vidUnit4" style="display:none;">
         <div class="video-box">
           <video controls playsinline preload="metadata" onloadeddata="document.getElementById('vidUnit4').style.display='block';">
@@ -324,7 +386,6 @@
         <div class="video-caption">नाइट ड्राइविंग व हाईवे टेस्ट</div>
       </div>
 
-      <!-- Video 5 -->
       <div class="video-unit" id="vidUnit5" style="display:none;">
         <div class="video-box">
           <video controls playsinline preload="metadata" onloadeddata="document.getElementById('vidUnit5').style.display='block';">
@@ -335,77 +396,191 @@
       </div>
     </div>
 
-    <!-- Local Rates -->
+    <!-- Outstation Quotation Rules (First Priority Block) -->
+    <div class="card">
+      <div class="card-title" style="color: var(--primary);" id="quoteHead">
+        📋 क्रियांश ट्रैवल्स - आउटस्टेशन कोटेशन व मुख्य नियम
+      </div>
+      <div class="quote-summary">
+        <ul class="quote-list" id="quoteList">
+          <li>• <strong>गाड़ी:</strong> Hyundai Aura (Sedan AC)</li>
+          <li>• <strong>किराया:</strong> ₹14 प्रति किलोमीटर</li>
+          <li>• <strong>न्यूनतम औसत:</strong> 300 किमी प्रति दिन</li>
+          <li>• <strong>ड्राइवर भत्ता (DA):</strong> ₹300 प्रति दिन (सुबह 6:00 से रात 10:00 बजे तक)</li>
+          <li>• <strong>नाइट चार्ज / स्टे:</strong> ₹400 प्रति रात (रात 10:00 बजे के बाद)</li>
+          <li>• <strong>अन्य खर्चे:</strong> टोल टैक्स, स्टेट बॉर्डर एंट्री टैक्स और पार्किंग वास्तविक सरकारी रसीद के अनुसार कस्टमर द्वारा देय होंगे।</li>
+        </ul>
+        <div class="night-rule-alert" id="nightRuleAlert">
+          <strong>⏰ समय व नाइट चार्ज का नियम:</strong> डे ड्राइवर अलाउंस ₹300 सुबह 6:00 से रात 10:00 बजे तक का रहेगा। यदि यात्रा रात 10:00 बजे के बाद जारी रहती है या रात में वापसी होती है, तो ₹400 नाइट ड्राइविंग चार्ज अतिरिक्त देय होगा।
+        </div>
+      </div>
+    </div>
+
+    <!-- Airport & Local City Packages -->
     <div class="card">
       <div class="card-title" style="color: var(--accent);" id="localTitle">
-        📍 लोकल सिटी पैकेज (Ahmedabad / Gandhinagar)
+        📍 एयरपोर्ट व लोकल सिटी पैकेज (Ahmedabad / Gandhinagar)
       </div>
       <table class="rate-table">
         <tr>
           <td>
-            <span class="rate-title" id="r1Title">पॉइंट-टू-पॉइंट (शॉर्ट ट्रिप)</span>
-            <span class="rate-sub" id="r1Sub">शहर के अंदर आने-जाने के लिए</span>
+            <span class="rate-title" id="r0Title">✈️ अहमदाबाद एयरपोर्ट पिक एंड ड्रॉप</span>
+            <span class="rate-sub" id="r0Sub">(यह ₹499 का विशेष रेट केवल <strong>15 किमी के दायरे</strong> — जैसे चांदखेड़ा, मोटेरा, साबरमती, कोबा, शाहीबाग आदि के लिए मान्य है। 15 किमी से अधिक दूरी वाले क्षेत्रों — जैसे एसजी हाईवे, बोपल, प्रह्लादनगर आदि के लिए कुल दूरी के अनुसार <strong>₹20/किमी</strong> की दर से किराया लागू होगा। एयरपोर्ट पार्किंग व टोल चार्ज अतिरिक्त देय होंगे।)</span>
           </td>
-          <td class="rate-price" id="r1Price">₹16 / किमी<br><small style="font-size:11px; color:#888;">(न्यूनतम ₹300)</small></td>
+          <td class="rate-price" id="r0Price">₹499*<br><small style="font-size:11px; color:#64748b;">(15 किमी तक)</small></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="rate-title" id="r1Title">पॉइंट-टू-पॉइंट (शॉर्ट ट्रिप)</span>
+            <span class="rate-sub" id="r1Sub">(शहर के अंदर आने-जाने के लिए | न्यूनतम किराया ₹300)</span>
+          </td>
+          <td class="rate-price" id="r1Price">₹16 / किमी</td>
         </tr>
         <tr>
           <td>
             <span class="rate-title" id="r2Title">4 घंटे / 40 किमी पैकेज</span>
-            <span class="rate-sub" id="r2Sub">शॉपिंग व लोकल मीटिंग्स</span>
+            <span class="rate-sub" id="r2Sub">(40 किमी के बाद <strong>₹14/किमी</strong> और 4 घंटे के बाद <strong>₹150/घंटा</strong> अतिरिक्त चार्ज लगेगा | पार्किंग व टोल शामिल नहीं हैं)</span>
           </td>
-          <td class="rate-price">₹900</td>
+          <td class="rate-price">₹1,000</td>
         </tr>
         <tr>
           <td>
             <span class="rate-title" id="r3Title">8 घंटे / 80 किमी पैकेज</span>
-            <span class="rate-sub" id="r3Sub">फुल डे सिटी राइड</span>
+            <span class="rate-sub" id="r3Sub">(80 किमी के बाद <strong>₹14/किमी</strong> और 8 घंटे के बाद <strong>₹150/घंटा</strong> अतिरिक्त चार्ज लगेगा | पार्किंग व टोल शामिल नहीं हैं)</span>
           </td>
-          <td class="rate-price">₹1,700</td>
+          <td class="rate-price">₹1,800</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="rate-title" id="r4Title">12 घंटे / 120 किमी पैकेज</span>
+            <span class="rate-sub" id="r4Sub">(120 किमी के बाद <strong>₹14/किमी</strong> और 12 घंटे के बाद <strong>₹150/घंटा</strong> अतिरिक्त चार्ज लगेगा | पार्किंग व टोल शामिल नहीं हैं)</span>
+          </td>
+          <td class="rate-price">₹2,500</td>
         </tr>
       </table>
-      <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;" id="localExtra">
-        * पैकेज से अधिक समय: ₹100/घंटा | अतिरिक्त दूरी: ₹14/किमी
-      </p>
     </div>
 
-    <!-- Outstation Rates -->
+    <!-- Outstation Base Rates -->
     <div class="card">
-      <div class="card-title" style="color: var(--success);" id="outTitle">
-        🛣️ आउटस्टेशन राउंड ट्रिप (बाहर गांव)
+      <div class="card-title" style="color: var(--nature);" id="outTitle">
+        🛣️ आउटस्टेशन राउंड ट्रिप दरें (बाहर गांव)
       </div>
       <table class="rate-table">
         <tr>
           <td>
             <span class="rate-title" id="o1Title">किराया प्रति किलोमीटर</span>
-            <span class="rate-sub" id="o1Sub">हाईवे राइड्स (आना-जाना दोनों)</span>
+            <span class="rate-sub" id="o1Sub">हाईवे राइड्स (आना-जाना दोनों तरफ की गणना)</span>
           </td>
-          <td class="rate-price outstation-price" id="o1Price">₹12 / किमी</td>
+          <td class="rate-price outstation-price" id="o1Price">₹14 / किमी</td>
         </tr>
         <tr>
           <td>
             <span class="rate-title" id="o2Title">न्यूनतम रनिंग गणना</span>
-            <span class="rate-sub" id="o2Sub">प्रति दिन की न्यूनतम सीमा</span>
+            <span class="rate-sub" id="o2Sub">प्रति कैलेंडर दिन की न्यूनतम सीमा</span>
           </td>
-          <td class="rate-price outstation-price">250 किमी / दिन</td>
+          <td class="rate-price outstation-price" id="o2Price">300 किमी / दिन</td>
         </tr>
         <tr>
           <td>
-            <span class="rate-title" id="o3Title">ड्राइवर अलाउंस (DA)</span>
-            <span class="rate-sub" id="o3Sub">भोजन व नाइट चार्ज</span>
+            <span class="rate-title" id="o3Title">डे ड्राइवर अलाउंस (DA)</span>
+            <span class="rate-sub" id="o3Sub">सुबह 6:00 से रात 10:00 बजे तक</span>
           </td>
-          <td class="rate-price outstation-price">₹300 / दिन</td>
+          <td class="rate-price outstation-price" id="o3Price">₹300 / दिन</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="rate-title" id="o4Title">नाइट चार्ज / स्टे</span>
+            <span class="rate-sub" id="o4Sub">रात 10:00 बजे के बाद या रात्रि विश्राम</span>
+          </td>
+          <td class="rate-price outstation-price" id="o4Price">₹400 / रात</td>
         </tr>
       </table>
     </div>
 
-    <!-- All-India / Multi-State Tour Packages (Gujarat, MP, Rajasthan) -->
+    <!-- Specific Outstation Route Packages (One-Way & Round Trip) -->
+    <div class="card">
+      <div class="card-title" style="color: var(--primary);" id="routePkgHead">
+        📍 प्रमुख आउटस्टेशन रूट पैकेज (अहमदाबाद से)
+      </div>
+
+      <ul class="route-detail-list" id="routeDetailList">
+        <li class="route-detail-item">
+          <div class="route-detail-head">
+            <span>• अहमदाबाद से वडोदरा (One-Way / सिंगल ट्रिप)</span>
+            <span class="route-detail-fare">₹2,200*</span>
+          </div>
+          <div class="route-detail-sub">(लगभग 115 किमी एक तरफ का ड्रॉप किराया | टोल टैक्स, पार्किंग और अन्य सरकारी खर्चे इस पैकेज में शामिल नहीं हैं, वे अलग से देय होंगे)</div>
+        </li>
+
+        <li class="route-detail-item">
+          <div class="route-detail-head">
+            <span>• अहमदाबाद से वडोदरा और वापसी (राउंड ट्रिप)</span>
+            <span class="route-detail-fare">₹4,500*</span>
+          </div>
+          <div class="route-detail-sub">(न्यूनतम 300 किमी/दिन @ ₹14/किमी = ₹4,200 + ₹300 ड्राइवर अलाउंस | टोल टैक्स, पार्किंग और अन्य खर्चे इस पैकेज में शामिल नहीं हैं)</div>
+        </li>
+
+        <li class="route-detail-item">
+          <div class="route-detail-head">
+            <span>• अहमदाबाद से स्टैच्यू ऑफ यूनिटी (One-Way / सिंगल ट्रिप)</span>
+            <span class="route-detail-fare">₹3,800*</span>
+          </div>
+          <div class="route-detail-sub">(लगभग 200 किमी एक तरफ का ड्रॉप किराया | टोल टैक्स, पार्किंग और अन्य सरकारी खर्चे इस पैकेज में शामिल नहीं हैं, वे अलग से देय होंगे)</div>
+        </li>
+
+        <li class="route-detail-item">
+          <div class="route-detail-head">
+            <span>• अहमदाबाद से स्टैच्यू ऑफ यूनिटी और वापसी (राउंड ट्रिप)</span>
+            <span class="route-detail-fare">₹5,900*</span>
+          </div>
+          <div class="route-detail-sub">(कुल ~400 किमी @ ₹14/किमी + ₹300 ड्राइवर अलाउंस | टोल टैक्स, पार्किंग और अन्य खर्चे इस पैकेज में शामिल नहीं हैं)</div>
+        </li>
+
+        <li class="route-detail-item">
+          <div class="route-detail-head">
+            <span>• अहमदाबाद से उज्जैन (One-Way / सिंगल ट्रिप)</span>
+            <span class="route-detail-fare">₹7,500*</span>
+          </div>
+          <div class="route-detail-sub">(लगभग 400 किमी एक तरफ का ड्रॉप किराया | टोल टैक्स, MP बॉर्डर टैक्स, पार्किंग और अन्य खर्चे इस पैकेज में शामिल नहीं हैं)</div>
+        </li>
+
+        <li class="route-detail-item">
+          <div class="route-detail-head">
+            <span>• अहमदाबाद से उज्जैन और वापसी (राउंड ट्रिप)</span>
+            <span class="route-detail-fare">₹11,800* से शुरू</span>
+          </div>
+          <div class="route-detail-sub">(कुल ~800 किमी @ ₹14/किमी + 2 दिन का अलाउंस ₹600 | नाइट चार्ज ₹400/रात, टोल टैक्स, MP बॉर्डर टैक्स व पार्किंग इस पैकेज में शामिल नहीं हैं)</div>
+        </li>
+
+        <li class="route-detail-item">
+          <div class="route-detail-head">
+            <span>• अहमदाबाद से इंदौर (One-Way / सिंगल ट्रिप)</span>
+            <span class="route-detail-fare">₹7,500*</span>
+          </div>
+          <div class="route-detail-sub">(लगभग 400 किमी एक तरफ का ड्रॉप किराया | टोल टैक्स, MP बॉर्डर टैक्स, पार्किंग और अन्य खर्चे इस पैकेज में शामिल नहीं हैं)</div>
+        </li>
+
+        <li class="route-detail-item">
+          <div class="route-detail-head">
+            <span>• अहमदाबाद से इंदौर और वापसी (राउंड ट्रिप)</span>
+            <span class="route-detail-fare">₹11,800* से शुरू</span>
+          </div>
+          <div class="route-detail-sub">(कुल ~800 किमी @ ₹14/किमी + 2 दिन का अलाउंस ₹600 | नाइट चार्ज ₹400/रात, टोल टैक्स, MP बॉर्डर टैक्स व पार्किंग इस पैकेज में शामिल नहीं हैं)</div>
+        </li>
+      </ul>
+
+      <div class="night-rule-alert" style="margin-top: 14px;" id="multiDayNote">
+        <strong>📌 3 दिन / 2 रात की यात्रा का उदाहरण:</strong> यदि आप पहले दिन जाते हैं, रात को वहां रुकते हैं और तीसरे दिन वापस आते हैं, तो पहले दिन का डे अलाउंस (₹300), दोनों रातों का नाइट चार्ज (₹400 × 2 = ₹800), दूसरे दिन का डे अलाउंस (₹300) और तीसरे दिन वापसी का डे अलाउंस (₹300) — यानी कुल <strong>3 दिन का DA (₹900) + 2 रात का नाइट चार्ज (₹800)</strong> लागू होगा।
+      </div>
+    </div>
+
+    <!-- All-India / Multi-State Tour Packages -->
     <div class="card">
       <div class="card-title" style="color: #6366f1;" id="tourHead">
         🏛️ लोकप्रिय तीर्थ एवं टूर पैकेज (अहमदाबाद से)
       </div>
       
       <div class="routes-grid">
-        <!-- MP Packages -->
         <div class="route-item" style="border-left: 3px solid #f59e0b;">
           <div class="route-dest">उज्जैन महाकालेश्वर ज्योतिर्लिंग</div>
           <div class="route-tag">MP दर्शन • 2 से 3 दिन पैकेज</div>
@@ -414,8 +589,6 @@
           <div class="route-dest">ओंकारेश्वर ज्योतिर्लिंग & इंदौर</div>
           <div class="route-tag">MP दर्शन • बेस्ट फैमिली टूर</div>
         </div>
-
-        <!-- Rajasthan Packages -->
         <div class="route-item" style="border-left: 3px solid #ec4899;">
           <div class="route-dest">माउंट आबू & गुरु शिखर</div>
           <div class="route-tag">राजस्थान • 2 दिन वीकेंड टूर</div>
@@ -424,8 +597,6 @@
           <div class="route-dest">उदयपुर & नाथद्वारा (श्रीनाथजी)</div>
           <div class="route-tag">राजस्थान • 3 दिन रॉयल टूर</div>
         </div>
-
-        <!-- Gujarat Packages -->
         <div class="route-item" style="border-left: 3px solid #10b981;">
           <div class="route-dest">द्वारका - सोमनाथ ज्योतिर्लिंग</div>
           <div class="route-tag">गुजरात दर्शन • 3-4 दिन टूर</div>
@@ -440,7 +611,7 @@
         </div>
         <div class="route-item" style="border-left: 3px solid #2563eb;">
           <div class="route-dest">अहमदाबाद एयरपोर्ट ट्रांसफर</div>
-          <div class="route-tag">24x7 फिक्स ऑन-टाइम सर्विस</div>
+          <div class="route-tag">₹499 से शुरू (15 किमी तक)</div>
         </div>
       </div>
     </div>
@@ -495,7 +666,8 @@
     <div class="terms-box" id="termsBox">
       <strong>📌 आवश्यक नियम व जानकारी:</strong><br>
       • टोल टैक्स, स्टेट बॉर्डर टैक्स एवं पार्किंग शुल्क कस्टमर द्वारा वास्तविक पर्ची के अनुसार देय होगा।<br>
-      • किलोमीटर एवं समय की गणना आपके पिकअप लोकेशन से शुरू होकर ड्रॉप लोकेशन पर समाप्त होगी।
+      • किलोमीटर एवं समय की गणना आपके पिकअप लोकेशन से शुरू होकर ड्रॉप लोकेशन पर समाप्त होगी।<br>
+      • डे ड्राइवर अलाउंस ₹300 सुबह 6:00 से रात 10:00 बजे तक लागू है; रात 10:00 बजे के बाद ₹400 नाइट चार्ज अतिरिक्त देय होगा।
     </div>
 
   </div>
@@ -517,25 +689,44 @@
         videoSectionTitle: "🎥 गाड़ी के वीडियो टूर (Video Gallery)",
         vc1: "गाड़ी का 360° वीडियो वॉक-अराउंड",
         vc2: "केबिन व इंटीरियर राइड वीडियो",
-        localTitle: "📍 लोकल सिटी पैकेज (Ahmedabad / Gandhinagar)",
+        quoteHead: "📋 क्रियांश ट्रैवल्स - आउटस्टेशन कोटेशन व मुख्य नियम",
+        quoteList: `
+          <li>• <strong>गाड़ी:</strong> Hyundai Aura (Sedan AC)</li>
+          <li>• <strong>किराया:</strong> ₹14 प्रति किलोमीटर</li>
+          <li>• <strong>न्यूनतम औसत:</strong> 300 किमी प्रति दिन</li>
+          <li>• <strong>ड्राइवर भत्ता (DA):</strong> ₹300 प्रति दिन (सुबह 6:00 से रात 10:00 बजे तक)</li>
+          <li>• <strong>नाइट चार्ज / स्टे:</strong> ₹400 प्रति रात (रात 10:00 बजे के बाद)</li>
+          <li>• <strong>अन्य खर्चे:</strong> टोल टैक्स, स्टेट बॉर्डर एंट्री टैक्स और पार्किंग वास्तविक सरकारी रसीद के अनुसार कस्टमर द्वारा देय होंगे।</li>
+        `,
+        nightRuleAlert: "<strong>⏰ समय व नाइट चार्ज का नियम:</strong> डे ड्राइवर अलाउंस ₹300 सुबह 6:00 से रात 10:00 बजे तक का रहेगा। यदि यात्रा रात 10:00 बजे के बाद जारी रहती है या रात में वापसी होती है, तो ₹400 नाइट ड्राइविंग चार्ज अतिरिक्त देय होगा।",
+        localTitle: "📍 एयरपोर्ट व लोकल सिटी पैकेज (Ahmedabad / Gandhinagar)",
+        r0Title: "✈️ अहमदाबाद एयरपोर्ट पिक एंड ड्रॉप",
+        r0Sub: "(यह ₹499 का विशेष रेट केवल <strong>15 किमी के दायरे</strong> — जैसे चांदखेड़ा, मोटेरा, साबरमती, कोबा, शाहीबाग आदि के लिए मान्य है। 15 किमी से अधिक दूरी वाले क्षेत्रों — जैसे एसजी हाईवे, बोपल, प्रह्लादनगर आदि के लिए कुल दूरी के अनुसार <strong>₹20/किमी</strong> की दर से किराया लागू होगा। एयरपोर्ट पार्किंग व टोल चार्ज अतिरिक्त देय होंगे।)",
+        r0Price: "₹499*<br><small style='font-size:11px; color:#64748b;'>(15 किमी तक)</small>",
         r1Title: "पॉइंट-टू-पॉइंट (शॉर्ट ट्रिप)",
-        r1Sub: "शहर के अंदर आने-जाने के लिए",
-        r1Price: "₹16 / किमी<br><small style='font-size:11px; color:#888;'>(न्यूनतम ₹300)</small>",
+        r1Sub: "(शहर के अंदर आने-जाने के लिए | न्यूनतम किराया ₹300)",
+        r1Price: "₹16 / किमी",
         r2Title: "4 घंटे / 40 किमी पैकेज",
-        r2Sub: "शॉपिंग व लोकल मीटिंग्स",
+        r2Sub: "(40 किमी के बाद <strong>₹14/किमी</strong> और 4 घंटे के बाद <strong>₹150/घंटा</strong> अतिरिक्त चार्ज लगेगा | पार्किंग व टोल शामिल नहीं हैं)",
         r3Title: "8 घंटे / 80 किमी पैकेज",
-        r3Sub: "फुल डे सिटी राइड",
-        localExtra: "* पैकेज से अधिक समय: ₹100/घंटा | अतिरिक्त दूरी: ₹14/किमी",
-        outTitle: "🛣️ आउटस्टेशन राउंड ट्रिप (बाहर गांव)",
+        r3Sub: "(80 किमी के बाद <strong>₹14/किमी</strong> और 8 घंटे के बाद <strong>₹150/घंटा</strong> अतिरिक्त चार्ज लगेगा | पार्किंग व टोल शामिल नहीं हैं)",
+        r4Title: "12 घंटे / 120 किमी पैकेज",
+        r4Sub: "(120 किमी के बाद <strong>₹14/किमी</strong> और 12 घंटे के बाद <strong>₹150/घंटा</strong> अतिरिक्त चार्ज लगेगा | पार्किंग व टोल शामिल नहीं हैं)",
+        outTitle: "🛣️ आउटस्टेशन राउंड ट्रिप दरें (बाहर गांव)",
         o1Title: "किराया प्रति किलोमीटर",
-        o1Sub: "हाईवे राइड्स (आना-जाना दोनों)",
-        o1Price: "₹12 / किमी",
+        o1Sub: "हाईवे राइड्स (आना-जाना दोनों तरफ की गणना)",
+        o1Price: "₹14 / किमी",
         o2Title: "न्यूनतम रनिंग गणना",
-        o2Sub: "प्रति दिन की न्यूनतम सीमा",
-        o2Price: "250 किमी / दिन",
-        o3Title: "ड्राइवर अलाउंस (DA)",
-        o3Sub: "भोजन व नाइट चार्ज",
+        o2Sub: "प्रति कैलेंडर दिन की न्यूनतम सीमा",
+        o2Price: "300 किमी / दिन",
+        o3Title: "डे ड्राइवर अलाउंस (DA)",
+        o3Sub: "सुबह 6:00 से रात 10:00 बजे तक",
         o3Price: "₹300 / दिन",
+        o4Title: "नाइट चार्ज / स्टे",
+        o4Sub: "रात 10:00 बजे के बाद या रात्रि विश्राम",
+        o4Price: "₹400 / रात",
+        routePkgHead: "📍 प्रमुख आउटस्टेशन रूट पैकेज (अहमदाबाद से)",
+        multiDayNote: "<strong>📌 3 दिन / 2 रात की यात्रा का उदाहरण:</strong> यदि आप पहले दिन जाते हैं, रात को वहां रुकते हैं और तीसरे दिन वापस आते हैं, तो पहले दिन का डे अलाउंस (₹300), दोनों रातों का नाइट चार्ज (₹400 × 2 = ₹800), दूसरे दिन का डे अलाउंस (₹300) और तीसरे दिन वापसी का डे अलाउंस (₹300) — यानी कुल <strong>3 दिन का DA (₹900) + 2 रात का नाइट चार्ज (₹800)</strong> लागू होगा।",
         tourHead: "🏛️ लोकप्रिय तीर्थ एवं टूर पैकेज (अहमदाबाद से)",
         revHead: "⭐ ग्राहकों के अनुभव (Customer Reviews)",
         faqHead: "❓ अक्सर पूछे जाने वाले सवाल (FAQ)",
@@ -543,7 +734,7 @@
         fa1: "स्टेट बॉर्डर एंट्री टैक्स, टोल टैक्स और पार्किंग शुल्क वास्तविक सरकारी रसीद के अनुसार यात्री द्वारा देय होता है।",
         fq2: "क्या लंबी यात्रा के लिए कार में मोबाइल चार्जिंग और कंफर्ट की सुविधा है?",
         fa2: "हाँ, Aura Prime में आगे और पीछे दोनों जगह 12V फास्ट मोबाइल चार्जिंग, चिल्ड रियर AC और आरामदायक कुशन सीटें उपलब्ध हैं।",
-        terms: "<strong>📌 आवश्यक नियम व जानकारी:</strong><br>• टोल टैक्स, स्टेट बॉर्डर टैक्स एवं पार्किंग शुल्क कस्टमर द्वारा वास्तविक पर्ची के अनुसार देय होगा।<br>• किलोमीटर एवं समय की गणना आपके पिकअप लोकेशन से शुरू होकर ड्रॉप लोकेशन पर समाप्त होगी।",
+        terms: "<strong>📌 आवश्यक नियम व जानकारी:</strong><br>• टोल टैक्स, स्टेट बॉर्डर टैक्स एवं पार्किंग शुल्क कस्टमर द्वारा वास्तविक पर्ची के अनुसार देय होगा।<br>• किलोमीटर एवं समय की गणना आपके पिकअप लोकेशन से शुरू होकर ड्रॉप लोकेशन पर समाप्त होगी।<br>• डे ड्राइवर अलाउंस ₹300 सुबह 6:00 से रात 10:00 बजे तक लागू है; रात 10:00 बजे के बाद ₹400 नाइट चार्ज अतिरिक्त देय होगा।",
         callBtn: "📞 कॉल करें",
         waBtn: "💬 व्हाट्सएप बुकिंग",
         waMsg: "नमस्ते, मुझे Kriyansh Travels से कैब बुक करनी है।"
@@ -557,25 +748,44 @@
         videoSectionTitle: "🎥 ગાડીના વિડીયો ટૂર (Video Gallery)",
         vc1: "ગાડીનો 360° વિડીયો વૉક-અરાઉન્ડ",
         vc2: "અંદરની કેબિન અને રાઈડ વિડીયો",
-        localTitle: "📍 લોકલ સિટી પેકેજ (Ahmedabad / Gandhinagar)",
+        quoteHead: "📋 ક્રિયાંશ ટ્રાવેલ્સ - આઉટસ્ટેશન કોટેશન અને મુખ્ય નિયમો",
+        quoteList: `
+          <li>• <strong>ગાડી:</strong> Hyundai Aura (Sedan AC)</li>
+          <li>• <strong>ભાડું:</strong> ₹14 પ્રતિ કિલોમીટર</li>
+          <li>• <strong>ન્યૂનતમ એવરેજ:</strong> 300 કિમી પ્રતિ દિવસ</li>
+          <li>• <strong>ડ્રાઈવર ભથ્થું (DA):</strong> ₹300 પ્રતિ દિવસ (સવારે 6:00 થી રાત્રે 10:00 સુધી)</li>
+          <li>• <strong>નાઈટ ચાર્જ / સ્ટે:</strong> ₹400 પ્રતિ રાત (રાત્રે 10:00 વાગ્યા પછી)</li>
+          <li>• <strong>અન્ય ખર્ચ:</strong> ટોલ ટેક્સ, સ્ટેટ બોર્ડર એન્ટ્રી ટેક્સ અને પાર્કિંગ અસલ સરકારી રસીદ મુજબ ગ્રાહકે ચૂકવવાના રહેશે.</li>
+        `,
+        nightRuleAlert: "<strong>⏰ સમય અને નાઈટ ચાર્જનો નિયમ:</strong> ડે ડ્રાઈવર એલાઉન્સ ₹300 સવારે 6:00 થી રાત્રે 10:00 વાગ્યા સુધીનું રહેશે. જો મુસાફરી રાત્રે 10:00 વાગ્યા પછી ચાલુ રહે અથવા રાત્રે પરત ફરવાનું થાય, તો ₹400 નાઈટ ડ્રાઈવિંગ ચાર્જ વધારાનો ચૂકવવો પડશે.",
+        localTitle: "📍 એરપોર્ટ અને લોકલ સિટી પેકેજ (Ahmedabad / Gandhinagar)",
+        r0Title: "✈️ અમદાવાદ એરપોર્ટ પિક એન્ડ ડ્રોપ",
+        r0Sub: "(આ ₹499 નો ખાસ રેટ માત્ર <strong>15 કિમીની મર્યાદા</strong> — જેમ કે ચાંદખેડા, મોટેરા, સાબરમતી, કોબા, શાહીબાગ વગેરે માટે માન્ય છે. 15 કિમીથી વધુ અંતર માટે કુલ અંતર મુજબ <strong>₹20/કિમી</strong> ભાડું લાગુ પડશે. એરપોર્ટ પાર્કિંગ અને ટોલ ચાર્જ અલગથી ચૂકવવાના રહેશે.)",
+        r0Price: "₹499*<br><small style='font-size:11px; color:#64748b;'>(15 કિમી સુધી)</small>",
         r1Title: "પોઈન્ટ-ટુ-પોઈન્ટ (શોર્ટ ટ્રિપ)",
-        r1Sub: "શહેરમાં જવા-આવવા માટે",
-        r1Price: "₹16 / કિમી<br><small style='font-size:11px; color:#888;'>(ન્યૂનતમ ₹300)</small>",
+        r1Sub: "(શહેરમાં જવા-આવવા માટે | ન્યૂનતમ ભાડું ₹300)",
+        r1Price: "₹16 / કિમી",
         r2Title: "4 કલાક / 40 કિમી પેકેજ",
-        r2Sub: "શોપિંગ અને લોકલ મીટિંગ્સ",
+        r2Sub: "(40 કિમી પછી <strong>₹14/કિમી</strong> અને 4 કલાક પછી <strong>₹150/કલાક</strong> વધારાનો ચાર્જ લાગશે | પાર્કિંગ અને ટોલ સામેલ નથી)",
         r3Title: "8 કલાક / 80 કિમી પેકેજ",
-        r3Sub: "ફુલ ડે સિટી રાઈડ",
-        localExtra: "* વધારાનો સમય: ₹100/કલાક | વધારાનું અંતર: ₹14/કિમી",
-        outTitle: "🛣️ આઉટસ્ટેશન રાઉન્ડ ટ્રિપ (બહાર ગામ)",
+        r3Sub: "(80 કિમી પછી <strong>₹14/કિમી</strong> અને 8 કલાક પછી <strong>₹150/કલાક</strong> વધારાનો ચાર્જ લાગશે | પાર્કિંગ અને ટોલ સામેલ નથી)",
+        r4Title: "12 કલાક / 120 કિમી પેકેજ",
+        r4Sub: "(120 કિમી પછી <strong>₹14/કિમી</strong> અને 12 કલાક પછી <strong>₹150/કલાક</strong> વધારાનો ચાર્જ લાગશે | પાર્કિંગ અને ટોલ સામેલ નથી)",
+        outTitle: "🛣️ આઉટસ્ટેશન રાઉન્ડ ટ્રિપ દરો (બહાર ગામ)",
         o1Title: "ભાડું પ્રતિ કિલોમીટર",
-        o1Sub: "હાઈવે રાઈડ્સ (આવવા-જવાનું)",
-        o1Price: "₹12 / કિમી",
+        o1Sub: "હાઈવે રાઈડ્સ (આવવા-જવાનું બંને તરફ)",
+        o1Price: "₹14 / કિમી",
         o2Title: "ન્યૂનતમ રનિંગ ગણતરી",
-        o2Sub: "પ્રતિ દિવસની લિમિટ",
-        o2Price: "250 કિમી / દિવસ",
-        o3Title: "ડ્રાઈવર ભથ્થું (DA)",
-        o3Sub: "નાઈટ/ડે એલાઉન્સ",
+        o2Sub: "પ્રતિ દિવસની ન્યૂનતમ લિમિટ",
+        o2Price: "300 કિમી / દિવસ",
+        o3Title: "ડે ડ્રાઈવર ભથ્થું (DA)",
+        o3Sub: "સવારે 6:00 થી રાત્રે 10:00 સુધી",
         o3Price: "₹300 / દિવસ",
+        o4Title: "નાઈટ ચાર્જ / સ્ટે",
+        o4Sub: "રાત્રે 10:00 પછી અથવા રાત્રિ રોકાણ",
+        o4Price: "₹400 / રાત",
+        routePkgHead: "📍 મુખ્ય આઉટસ્ટેશન રૂટ પેકેજ (અમદાવાદથી)",
+        multiDayNote: "<strong>📌 3 દિવસ / 2 રાતની મુસાફરીનું ઉદાહરણ:</strong> જો તમે પહેલા દિવસે જાઓ છો, રાત્રે ત્યાં રોકાઓ છો અને ત્રીજા દિવસે પરત આવો છો, તો કુલ <strong>3 દિવસનું DA (₹300 × 3 = ₹900)</strong> અને <strong>2 રાતનો નાઈટ ચાર્જ (₹400 × 2 = ₹800)</strong> લાગુ પડશે.",
         tourHead: "🏛️ લોકપ્રિય યાત્રા પેકેજ (અમદાવાદથી)",
         revHead: "⭐ ગ્રાહકોના અનુભવ (Customer Reviews)",
         faqHead: "❓ વારંવાર પૂછાતા પ્રશ્નો (FAQ)",
@@ -583,7 +793,7 @@
         fa1: "સ્ટેટ બોર્ડર એન્ટ્રી ટેક્સ, ટોલ ટેક્સ અને પાર્કિંગ ચાર્જ અસલ સરકારી રસીદ મુજબ મુસાફરે ચૂકવવાના રહેશે.",
         fq2: "શું લાંબી મુસાફરી માટે કારમાં મોબાઈલ ચાર્જિંગ સુવિધા છે?",
         fa2: "હા, Aura Prime માં આગળ અને પાછળ બંને જગ્યાએ 12V ફાસ્ટ ચાર્જિંગ, ચિલ્ડ રીઅર AC અને આરામદાયક સીટો ઉપલબ્ધ છે.",
-        terms: "<strong>📌 જરૂરી નિયમો અને માહિતી:</strong><br>• ટોલ ટેક્સ, સ્ટેટ બોર્ડર ટેક્સ અને પાર્કિંગ ચાર્જ ગ્રાહકે અલગથી ચૂકવવાનો રહેશે.<br>• કિલોમીટર અને સમયની ગણતરી તમારા પિકઅપ પોઈન્ટથી શરૂ થઈને ડ્રોપ પોઈન્ટ પર પૂર્ણ થશે.",
+        terms: "<strong>📌 જરૂરી નિયમો અને માહિતી:</strong><br>• ટોલ ટેક્સ, સ્ટેટ બોર્ડર ટેક્સ અને પાર્કિંગ ચાર્જ ગ્રાહકે અલગથી ચૂકવવાનો રહેશે.<br>• કિલોમીટર અને સમયની ગણતરી તમારા પિકઅપ પોઈન્ટથી શરૂ થઈને ડ્રોપ પોઈન્ટ પર પૂર્ણ થશે.<br>• ડે ડ્રાઈવર એલાઉન્સ ₹300 સવારે 6:00 થી રાત્રે 10:00 સુધી લાગુ છે; રાત્રે 10:00 પછી ₹400 નાઈટ ચાર્જ વધારાનો ચૂકવવો પડશે.",
         callBtn: "📞 કોલ કરો",
         waBtn: "💬 વોટ્સએપ",
         waMsg: "હેલો, મને Kriyansh Travels માંથી કેબ બુક કરવી છે."
@@ -597,25 +807,44 @@
         videoSectionTitle: "🎥 Video Tours (Video Gallery)",
         vc1: "360° Vehicle Walkaround Video",
         vc2: "Interior Cabin & Smooth Ride Video",
-        localTitle: "📍 Local City Packages (Ahmedabad / Gandhinagar)",
+        quoteHead: "📋 Kriyansh Travels - Outstation Quotation & Rules",
+        quoteList: `
+          <li>• <strong>Vehicle:</strong> Hyundai Aura (Sedan AC)</li>
+          <li>• <strong>Rate:</strong> ₹14 per kilometer</li>
+          <li>• <strong>Minimum Average:</strong> 300 km per day</li>
+          <li>• <strong>Driver Allowance (DA):</strong> ₹300 per day (6:00 AM to 10:00 PM)</li>
+          <li>• <strong>Night Charge / Stay:</strong> ₹400 per night (After 10:00 PM)</li>
+          <li>• <strong>Other Expenses:</strong> Toll tax, state border entry tax, and parking are payable by the customer as per actual government receipts.</li>
+        `,
+        nightRuleAlert: "<strong>⏰ Time & Night Charge Policy:</strong> Day Driver Allowance of ₹300 covers 6:00 AM to 10:00 PM. If travel continues after 10:00 PM or returns at night, an additional ₹400 night driving charge applies.",
+        localTitle: "📍 Airport & Local City Packages (Ahmedabad / Gandhinagar)",
+        r0Title: "✈️ Ahmedabad Airport Pick & Drop",
+        r0Sub: "(This special ₹499 rate applies only within a <strong>15 km radius</strong> — such as Chandkheda, Motera, Sabarmati, Koba, Shahibaug. For distances beyond 15 km — such as SG Highway, Bopal, Prahladnagar — <strong>₹20/km</strong> applies for total distance. Airport parking & tolls extra.)",
+        r0Price: "₹499*<br><small style='font-size:11px; color:#64748b;'>(Up to 15 km)</small>",
         r1Title: "Point-to-Point (Short Trips)",
-        r1Sub: "For intracity travels & commute",
-        r1Price: "₹16 / km<br><small style='font-size:11px; color:#888;'>(Min. ₹300)</small>",
+        r1Sub: "(For intracity travels & commute | Minimum fare ₹300)",
+        r1Price: "₹16 / km",
         r2Title: "4 Hours / 40 km Package",
-        r2Sub: "Shopping & short city meetings",
+        r2Sub: "(Beyond 40 km: <strong>₹14/km</strong> & beyond 4 hrs: <strong>₹150/hr</strong> extra | Parking & tolls excluded)",
         r3Title: "8 Hours / 80 km Package",
-        r3Sub: "Full-day city visit & corporate use",
-        localExtra: "* Extra time: ₹100/hr | Extra running: ₹14/km",
-        outTitle: "🛣️ Outstation Round Trips",
+        r3Sub: "(Beyond 80 km: <strong>₹14/km</strong> & beyond 8 hrs: <strong>₹150/hr</strong> extra | Parking & tolls excluded)",
+        r4Title: "12 Hours / 120 km Package",
+        r4Sub: "(Beyond 120 km: <strong>₹14/km</strong> & beyond 12 hrs: <strong>₹150/hr</strong> extra | Parking & tolls excluded)",
+        outTitle: "🛣️ Outstation Round Trip Rates",
         o1Title: "Per Kilometer Fare",
-        o1Sub: "Highway rides (both way calculation)",
-        o1Price: "₹12 / km",
+        o1Sub: "Highway rides (both-way calculation)",
+        o1Price: "₹14 / km",
         o2Title: "Minimum Running Limit",
         o2Sub: "Per calendar day minimum",
-        o2Price: "250 km / day",
-        o3Title: "Driver Allowance (DA)",
-        o3Sub: "Food & night accommodation",
+        o2Price: "300 km / day",
+        o3Title: "Day Driver Allowance (DA)",
+        o3Sub: "6:00 AM to 10:00 PM",
         o3Price: "₹300 / day",
+        o4Title: "Night Charge / Stay",
+        o4Sub: "After 10:00 PM or overnight halt",
+        o4Price: "₹400 / night",
+        routePkgHead: "📍 Popular Outstation Route Packages (From Ahmedabad)",
+        multiDayNote: "<strong>📌 3 Days / 2 Nights Trip Example:</strong> If you depart on Day 1, stay 2 nights, and return on Day 3, you pay for <strong>3 Days DA (₹300 × 3 = ₹900)</strong> plus <strong>2 Nights Stay Charge (₹400 × 2 = ₹800)</strong>.",
         tourHead: "🏛️ Popular Pilgrimage & Tours (From Ahmedabad)",
         revHead: "⭐ Customer Testimonials",
         faqHead: "❓ Frequently Asked Questions (FAQ)",
@@ -623,16 +852,16 @@
         fa1: "All inter-state commercial border permits, highway toll receipts, and parking fees are directly paid by passenger as per actual slips.",
         fq2: "Is fast mobile charging available for long trips?",
         fa2: "Yes, our Hyundai Aura Prime is equipped with dual 12V fast charging ports, rear AC vents, and ergonomic luxury seats.",
-        terms: "<strong>📌 Terms & Conditions:</strong><br>• Toll taxes, state border permits, and parking charges are payable by the customer as per actual receipts.<br>• Kilometers and hours are calculated from garage pickup to final drop point.",
+        terms: "<strong>📌 Terms & Conditions:</strong><br>• Toll taxes, state border permits, and parking charges are payable by the customer as per actual receipts.<br>• Kilometers and hours are calculated from pickup location to final drop point.<br>• Day Driver Allowance (₹300) applies from 6:00 AM to 10:00 PM; after 10:00 PM, ₹400 night charge applies.",
         callBtn: "📞 Call Now",
         waBtn: "💬 WhatsApp Booking",
         waMsg: "Hello, I would like to book a cab with Kriyansh Travels."
       }
     };
 
-    function setLang(lang) {
+    function setLang(lang, btn) {
       document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-      event.target.classList.add('active');
+      if (btn) btn.classList.add('active');
 
       const d = data[lang];
       document.getElementById('heroBadge').innerHTML = d.badge;
@@ -645,7 +874,13 @@
       document.getElementById('videoSectionTitle').innerHTML = d.videoSectionTitle;
       document.getElementById('vc1').innerHTML = d.vc1;
       document.getElementById('vc2').innerHTML = d.vc2;
+      document.getElementById('quoteHead').innerHTML = d.quoteHead;
+      document.getElementById('quoteList').innerHTML = d.quoteList;
+      document.getElementById('nightRuleAlert').innerHTML = d.nightRuleAlert;
       document.getElementById('localTitle').innerHTML = d.localTitle;
+      document.getElementById('r0Title').innerHTML = d.r0Title;
+      document.getElementById('r0Sub').innerHTML = d.r0Sub;
+      document.getElementById('r0Price').innerHTML = d.r0Price;
       document.getElementById('r1Title').innerHTML = d.r1Title;
       document.getElementById('r1Sub').innerHTML = d.r1Sub;
       document.getElementById('r1Price').innerHTML = d.r1Price;
@@ -653,7 +888,8 @@
       document.getElementById('r2Sub').innerHTML = d.r2Sub;
       document.getElementById('r3Title').innerHTML = d.r3Title;
       document.getElementById('r3Sub').innerHTML = d.r3Sub;
-      document.getElementById('localExtra').innerHTML = d.localExtra;
+      document.getElementById('r4Title').innerHTML = d.r4Title;
+      document.getElementById('r4Sub').innerHTML = d.r4Sub;
       document.getElementById('outTitle').innerHTML = d.outTitle;
       document.getElementById('o1Title').innerHTML = d.o1Title;
       document.getElementById('o1Sub').innerHTML = d.o1Sub;
@@ -664,6 +900,11 @@
       document.getElementById('o3Title').innerHTML = d.o3Title;
       document.getElementById('o3Sub').innerHTML = d.o3Sub;
       document.getElementById('o3Price').innerHTML = d.o3Price;
+      document.getElementById('o4Title').innerHTML = d.o4Title;
+      document.getElementById('o4Sub').innerHTML = d.o4Sub;
+      document.getElementById('o4Price').innerHTML = d.o4Price;
+      document.getElementById('routePkgHead').innerHTML = d.routePkgHead;
+      document.getElementById('multiDayNote').innerHTML = d.multiDayNote;
       document.getElementById('tourHead').innerHTML = d.tourHead;
       document.getElementById('revHead').innerHTML = d.revHead;
       document.getElementById('faqHead').innerHTML = d.faqHead;
