@@ -36,7 +36,6 @@
       position: relative;
     }
 
-    /* Subtle Botanical Leaf Watermark Pattern */
     body::before {
       content: "";
       position: fixed;
@@ -46,7 +45,6 @@
       z-index: -1;
     }
 
-    /* Top Nav */
     .top-nav {
       background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(8px);
@@ -83,7 +81,6 @@
     }
     .lang-btn.active { background: linear-gradient(135deg, var(--accent), var(--nature)); color: #ffffff; box-shadow: 0 2px 6px rgba(29, 78, 216, 0.25); }
 
-    /* Hero Header */
     .hero {
       background: linear-gradient(135deg, rgba(15, 41, 66, 0.90), rgba(21, 128, 61, 0.85)), 
                   url('car%20frount-side.jpg.jpeg') center/cover no-repeat;
@@ -108,7 +105,6 @@
 
     .container { max-width: 660px; margin: -16px auto 20px; padding: 0 15px; }
 
-    /* Cards with Botanical & Blue Accent Border */
     .card {
       background: var(--card-bg);
       border-radius: 16px;
@@ -131,7 +127,6 @@
       border-bottom: 1.5px dashed #cbd5e1;
     }
 
-    /* Auto Photo Grid */
     .dynamic-gallery {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -150,20 +145,17 @@
       height: 230px;
     }
 
-    /* Auto Video Block */
     .video-unit { margin-bottom: 14px; }
     .video-unit:last-child { margin-bottom: 0; }
     .video-box { width: 100%; border-radius: 12px; overflow: hidden; background: #000; border: 1.5px solid #cbd5e1; }
     .video-box video { width: 100%; max-height: 380px; display: block; border-radius: 12px; }
     .video-caption { font-size: 12px; font-weight: 600; color: var(--text-muted); margin-top: 5px; }
 
-    /* Trust Stats */
     .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center; }
     .stat-box { background: linear-gradient(180deg, #f8fafc, #f0fdf4); padding: 12px 8px; border-radius: 12px; border: 1px solid #bbf7d0; }
     .stat-num { font-size: 18px; font-weight: 800; color: var(--nature); }
     .stat-lbl { font-size: 11px; color: var(--text-dark); font-weight: 600; }
 
-    /* Quotation Summary Box */
     .quote-summary {
       background: linear-gradient(135deg, #eff6ff, #f0fdf4);
       border: 1.5px solid #93c5fd;
@@ -186,7 +178,6 @@
       line-height: 1.55;
     }
 
-    /* Tariff Table */
     .rate-table { width: 100%; border-collapse: collapse; }
     .rate-table tr { border-bottom: 1px dashed #cbd5e1; }
     .rate-table tr:last-child { border-bottom: none; }
@@ -196,7 +187,6 @@
     .rate-price { text-align: right; font-weight: 800; font-size: 15px; color: var(--accent); white-space: nowrap; padding-left: 10px; }
     .outstation-price { color: var(--nature) !important; }
 
-    /* Popular Routes Detailed List */
     .route-detail-list { list-style: none; padding: 0; margin: 0; }
     .route-detail-item {
       padding: 12px 0;
@@ -220,13 +210,11 @@
       line-height: 1.5;
     }
 
-    /* Tour Packages Grid */
     .routes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .route-item { background: #ffffff; border: 1px solid #cbd5e1; padding: 12px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.02); }
     .route-dest { font-weight: 700; font-size: 13px; color: var(--primary); }
     .route-tag { font-size: 11px; color: var(--nature); font-weight: 600; margin-top: 2px; }
 
-    /* Reviews */
     .review-card { background: #f8fafc; border: 1px solid #e2e8f0; border-left: 3px solid var(--nature); padding: 14px; border-radius: 12px; margin-bottom: 10px; }
     .review-card:last-child { margin-bottom: 0; }
     .review-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
@@ -234,13 +222,11 @@
     .review-stars { color: #f59e0b; font-size: 12px; }
     .review-text { font-size: 12px; color: var(--text-muted); }
 
-    /* FAQ */
     .faq-item { border-bottom: 1px solid #e2e8f0; padding: 10px 0; }
     .faq-item:last-child { border-bottom: none; }
     .faq-q { font-weight: 700; font-size: 13px; color: var(--primary); margin-bottom: 4px; }
     .faq-a { font-size: 12px; color: var(--text-muted); }
 
-    /* Terms */
     .terms-box {
       background: #fffbeb;
       border: 1px solid #fde68a;
@@ -252,7 +238,6 @@
       line-height: 1.65;
     }
 
-    /* Bottom Actions */
     .bottom-bar {
       position: fixed;
       bottom: 0;
@@ -396,7 +381,7 @@
       </div>
     </div>
 
-    <!-- Outstation Quotation Rules (First Priority Block) -->
+    <!-- Outstation Quotation Rules -->
     <div class="card">
       <div class="card-title" style="color: var(--primary);" id="quoteHead">
         📋 क्रियांश ट्रैवल्स - आउटस्टेशन कोटेशन व मुख्य नियम
@@ -405,7 +390,7 @@
         <ul class="quote-list" id="quoteList">
           <li>• <strong>गाड़ी:</strong> Hyundai Aura (Sedan AC)</li>
           <li>• <strong>किराया:</strong> ₹14 प्रति किलोमीटर</li>
-          <li>• <strong>न्यूनतम औसत:</strong> 300 किमी प्रति दिन</li>
+          <li>• <strong>न्यूनतम औसत:</strong> राउंड ट्रिप में 300 किमी/दिन (वन-वे में 250 किमी से शुरू)</li>
           <li>• <strong>ड्राइवर भत्ता (DA):</strong> ₹300 प्रति दिन (सुबह 6:00 से रात 10:00 बजे तक)</li>
           <li>• <strong>नाइट चार्ज / स्टे:</strong> ₹400 प्रति रात (रात 10:00 बजे के बाद)</li>
           <li>• <strong>अन्य खर्चे:</strong> टोल टैक्स, स्टेट बॉर्डर एंट्री टैक्स और पार्किंग वास्तविक सरकारी रसीद के अनुसार कस्टमर द्वारा देय होंगे।</li>
@@ -463,22 +448,22 @@
     <!-- Outstation Base Rates -->
     <div class="card">
       <div class="card-title" style="color: var(--nature);" id="outTitle">
-        🛣️ आउटस्टेशन राउंड ट्रिप दरें (बाहर गांव)
+        🛣️ आउटस्टेशन दरें (बाहर गांव)
       </div>
       <table class="rate-table">
         <tr>
           <td>
             <span class="rate-title" id="o1Title">किराया प्रति किलोमीटर</span>
-            <span class="rate-sub" id="o1Sub">हाईवे राइड्स (आना-जाना दोनों तरफ की गणना)</span>
+            <span class="rate-sub" id="o1Sub">हाईवे राइड्स (राउंड ट्रिप में दोनों तरफ की गणना)</span>
           </td>
           <td class="rate-price outstation-price" id="o1Price">₹14 / किमी</td>
         </tr>
         <tr>
           <td>
             <span class="rate-title" id="o2Title">न्यूनतम रनिंग गणना</span>
-            <span class="rate-sub" id="o2Sub">प्रति कैलेंडर दिन की न्यूनतम सीमा</span>
+            <span class="rate-sub" id="o2Sub">राउंड ट्रिप: 300 किमी/दिन | वन-वे: न्यूनतम 250 किमी</span>
           </td>
-          <td class="rate-price outstation-price" id="o2Price">300 किमी / दिन</td>
+          <td class="rate-price outstation-price" id="o2Price">250–300 किमी</td>
         </tr>
         <tr>
           <td>
@@ -507,9 +492,9 @@
         <li class="route-detail-item">
           <div class="route-detail-head">
             <span>• अहमदाबाद से वडोदरा (One-Way / सिंगल ट्रिप)</span>
-            <span class="route-detail-fare">₹2,200*</span>
+            <span class="route-detail-fare">₹3,800*</span>
           </div>
-          <div class="route-detail-sub">(लगभग 115 किमी एक तरफ का ड्रॉप किराया | टोल टैक्स, पार्किंग और अन्य सरकारी खर्चे इस पैकेज में शामिल नहीं हैं, वे अलग से देय होंगे)</div>
+          <div class="route-detail-sub">(न्यूनतम 250 किमी नियम @ ₹14/किमी = ₹3,500 + ₹300 ड्राइवर भत्ता — <strong>चूंकि यह सिंगल ट्रिप है और गाड़ी खाली वापस आती है, इसलिए न्यूनतम 250 किमी का भाड़ा लागू होता है</strong> | टोल टैक्स, पार्किंग और अन्य खर्चे इस पैकेज में शामिल नहीं हैं)</div>
         </li>
 
         <li class="route-detail-item">
@@ -517,15 +502,15 @@
             <span>• अहमदाबाद से वडोदरा और वापसी (राउंड ट्रिप)</span>
             <span class="route-detail-fare">₹4,500*</span>
           </div>
-          <div class="route-detail-sub">(न्यूनतम 300 किमी/दिन @ ₹14/किमी = ₹4,200 + ₹300 ड्राइवर अलाउंस | टोल टैक्स, पार्किंग और अन्य खर्चे इस पैकेज में शामिल नहीं हैं)</div>
+          <div class="route-detail-sub">(राउंड ट्रिप न्यूनतम 300 किमी/दिन @ ₹14/किमी = ₹4,200 + ₹300 ड्राइवर अलाउंस | टोल टैक्स, पार्किंग और अन्य खर्चे इस पैकेज में शामिल नहीं हैं)</div>
         </li>
 
         <li class="route-detail-item">
           <div class="route-detail-head">
             <span>• अहमदाबाद से स्टैच्यू ऑफ यूनिटी (One-Way / सिंगल ट्रिप)</span>
-            <span class="route-detail-fare">₹3,800*</span>
+            <span class="route-detail-fare">₹4,500*</span>
           </div>
-          <div class="route-detail-sub">(लगभग 200 किमी एक तरफ का ड्रॉप किराया | टोल टैक्स, पार्किंग और अन्य सरकारी खर्चे इस पैकेज में शामिल नहीं हैं, वे अलग से देय होंगे)</div>
+          <div class="route-detail-sub">(न्यूनतम 300 किमी नियम @ ₹14/किमी = ₹4,200 + ₹300 ड्राइवर भत्ता — <strong>चूंकि यह सिंगल ट्रिप है और गाड़ी खाली वापस आती है, इसलिए डेढ़ा / न्यूनतम 300 किमी का भाड़ा लगता है</strong> | टोल टैक्स, पार्किंग और अन्य खर्चे इस पैकेज में शामिल नहीं हैं)</div>
         </li>
 
         <li class="route-detail-item">
@@ -539,9 +524,9 @@
         <li class="route-detail-item">
           <div class="route-detail-head">
             <span>• अहमदाबाद से उज्जैन (One-Way / सिंगल ट्रिप)</span>
-            <span class="route-detail-fare">₹7,500*</span>
+            <span class="route-detail-fare">₹7,300*</span>
           </div>
-          <div class="route-detail-sub">(लगभग 400 किमी एक तरफ का ड्रॉप किराया | टोल टैक्स, MP बॉर्डर टैक्स, पार्किंग और अन्य खर्चे इस पैकेज में शामिल नहीं हैं)</div>
+          <div class="route-detail-sub">(लगभग 400 किमी दूरी — <strong>सिंगल ट्रिप में गाड़ी खाली वापस आने के कारण 1.25x भाड़ा (500 किमी @ ₹14/किमी = ₹7,000) + ₹300 ड्राइवर भत्ता लगता है</strong> | टोल टैक्स, MP बॉर्डर टैक्स, पार्किंग और अन्य खर्चे इस पैकेज में शामिल नहीं हैं)</div>
         </li>
 
         <li class="route-detail-item">
@@ -555,9 +540,9 @@
         <li class="route-detail-item">
           <div class="route-detail-head">
             <span>• अहमदाबाद से इंदौर (One-Way / सिंगल ट्रिप)</span>
-            <span class="route-detail-fare">₹7,500*</span>
+            <span class="route-detail-fare">₹7,300*</span>
           </div>
-          <div class="route-detail-sub">(लगभग 400 किमी एक तरफ का ड्रॉप किराया | टोल टैक्स, MP बॉर्डर टैक्स, पार्किंग और अन्य खर्चे इस पैकेज में शामिल नहीं हैं)</div>
+          <div class="route-detail-sub">(लगभग 400 किमी दूरी — <strong>सिंगल ट्रिप में गाड़ी खाली वापस आने के कारण 1.25x भाड़ा (500 किमी @ ₹14/किमी = ₹7,000) + ₹300 ड्राइवर भत्ता लगता है</strong> | टोल टैक्स, MP बॉर्डर टैक्स, पार्किंग और अन्य खर्चे इस पैकेज में शामिल नहीं हैं)</div>
         </li>
 
         <li class="route-detail-item">
@@ -693,7 +678,7 @@
         quoteList: `
           <li>• <strong>गाड़ी:</strong> Hyundai Aura (Sedan AC)</li>
           <li>• <strong>किराया:</strong> ₹14 प्रति किलोमीटर</li>
-          <li>• <strong>न्यूनतम औसत:</strong> 300 किमी प्रति दिन</li>
+          <li>• <strong>न्यूनतम औसत:</strong> राउंड ट्रिप में 300 किमी/दिन (वन-वे में 250 किमी से शुरू)</li>
           <li>• <strong>ड्राइवर भत्ता (DA):</strong> ₹300 प्रति दिन (सुबह 6:00 से रात 10:00 बजे तक)</li>
           <li>• <strong>नाइट चार्ज / स्टे:</strong> ₹400 प्रति रात (रात 10:00 बजे के बाद)</li>
           <li>• <strong>अन्य खर्चे:</strong> टोल टैक्स, स्टेट बॉर्डर एंट्री टैक्स और पार्किंग वास्तविक सरकारी रसीद के अनुसार कस्टमर द्वारा देय होंगे।</li>
@@ -712,13 +697,13 @@
         r3Sub: "(80 किमी के बाद <strong>₹14/किमी</strong> और 8 घंटे के बाद <strong>₹150/घंटा</strong> अतिरिक्त चार्ज लगेगा | पार्किंग व टोल शामिल नहीं हैं)",
         r4Title: "12 घंटे / 120 किमी पैकेज",
         r4Sub: "(120 किमी के बाद <strong>₹14/किमी</strong> और 12 घंटे के बाद <strong>₹150/घंटा</strong> अतिरिक्त चार्ज लगेगा | पार्किंग व टोल शामिल नहीं हैं)",
-        outTitle: "🛣️ आउटस्टेशन राउंड ट्रिप दरें (बाहर गांव)",
+        outTitle: "🛣️ आउटस्टेशन दरें (बाहर गांव)",
         o1Title: "किराया प्रति किलोमीटर",
-        o1Sub: "हाईवे राइड्स (आना-जाना दोनों तरफ की गणना)",
+        o1Sub: "हाईवे राइड्स (राउंड ट्रिप में दोनों तरफ की गणना)",
         o1Price: "₹14 / किमी",
         o2Title: "न्यूनतम रनिंग गणना",
-        o2Sub: "प्रति कैलेंडर दिन की न्यूनतम सीमा",
-        o2Price: "300 किमी / दिन",
+        o2Sub: "राउंड ट्रिप: 300 किमी/दिन | वन-वे: न्यूनतम 250 किमी",
+        o2Price: "250–300 किमी",
         o3Title: "डे ड्राइवर अलाउंस (DA)",
         o3Sub: "सुबह 6:00 से रात 10:00 बजे तक",
         o3Price: "₹300 / दिन",
@@ -752,7 +737,7 @@
         quoteList: `
           <li>• <strong>ગાડી:</strong> Hyundai Aura (Sedan AC)</li>
           <li>• <strong>ભાડું:</strong> ₹14 પ્રતિ કિલોમીટર</li>
-          <li>• <strong>ન્યૂનતમ એવરેજ:</strong> 300 કિમી પ્રતિ દિવસ</li>
+          <li>• <strong>ન્યૂનતમ એવરેજ:</strong> રાઉન્ડ ટ્રિપમાં 300 કિમી/દિવસ (વન-વેમાં 250 કિમીથી શરૂ)</li>
           <li>• <strong>ડ્રાઈવર ભથ્થું (DA):</strong> ₹300 પ્રતિ દિવસ (સવારે 6:00 થી રાત્રે 10:00 સુધી)</li>
           <li>• <strong>નાઈટ ચાર્જ / સ્ટે:</strong> ₹400 પ્રતિ રાત (રાત્રે 10:00 વાગ્યા પછી)</li>
           <li>• <strong>અન્ય ખર્ચ:</strong> ટોલ ટેક્સ, સ્ટેટ બોર્ડર એન્ટ્રી ટેક્સ અને પાર્કિંગ અસલ સરકારી રસીદ મુજબ ગ્રાહકે ચૂકવવાના રહેશે.</li>
@@ -771,13 +756,13 @@
         r3Sub: "(80 કિમી પછી <strong>₹14/કિમી</strong> અને 8 કલાક પછી <strong>₹150/કલાક</strong> વધારાનો ચાર્જ લાગશે | પાર્કિંગ અને ટોલ સામેલ નથી)",
         r4Title: "12 કલાક / 120 કિમી પેકેજ",
         r4Sub: "(120 કિમી પછી <strong>₹14/કિમી</strong> અને 12 કલાક પછી <strong>₹150/કલાક</strong> વધારાનો ચાર્જ લાગશે | પાર્કિંગ અને ટોલ સામેલ નથી)",
-        outTitle: "🛣️ આઉટસ્ટેશન રાઉન્ડ ટ્રિપ દરો (બહાર ગામ)",
+        outTitle: "🛣️ આઉટસ્ટેશન દરો (બહાર ગામ)",
         o1Title: "ભાડું પ્રતિ કિલોમીટર",
-        o1Sub: "હાઈવે રાઈડ્સ (આવવા-જવાનું બંને તરફ)",
+        o1Sub: "હાઈવે રાઈડ્સ (રાઉન્ડ ટ્રિપમાં બંને તરફ)",
         o1Price: "₹14 / કિમી",
         o2Title: "ન્યૂનતમ રનિંગ ગણતરી",
-        o2Sub: "પ્રતિ દિવસની ન્યૂનતમ લિમિટ",
-        o2Price: "300 કિમી / દિવસ",
+        o2Sub: "રાઉન્ડ ટ્રિપ: 300 કિમી/દિવસ | વન-વે: ન્યૂનતમ 250 કિમી",
+        o2Price: "250–300 કિમી",
         o3Title: "ડે ડ્રાઈવર ભથ્થું (DA)",
         o3Sub: "સવારે 6:00 થી રાત્રે 10:00 સુધી",
         o3Price: "₹300 / દિવસ",
@@ -811,7 +796,7 @@
         quoteList: `
           <li>• <strong>Vehicle:</strong> Hyundai Aura (Sedan AC)</li>
           <li>• <strong>Rate:</strong> ₹14 per kilometer</li>
-          <li>• <strong>Minimum Average:</strong> 300 km per day</li>
+          <li>• <strong>Minimum Average:</strong> 300 km/day for Round Trips (250 km min. for One-Way)</li>
           <li>• <strong>Driver Allowance (DA):</strong> ₹300 per day (6:00 AM to 10:00 PM)</li>
           <li>• <strong>Night Charge / Stay:</strong> ₹400 per night (After 10:00 PM)</li>
           <li>• <strong>Other Expenses:</strong> Toll tax, state border entry tax, and parking are payable by the customer as per actual government receipts.</li>
@@ -830,13 +815,13 @@
         r3Sub: "(Beyond 80 km: <strong>₹14/km</strong> & beyond 8 hrs: <strong>₹150/hr</strong> extra | Parking & tolls excluded)",
         r4Title: "12 Hours / 120 km Package",
         r4Sub: "(Beyond 120 km: <strong>₹14/km</strong> & beyond 12 hrs: <strong>₹150/hr</strong> extra | Parking & tolls excluded)",
-        outTitle: "🛣️ Outstation Round Trip Rates",
+        outTitle: "🛣️ Outstation Rates",
         o1Title: "Per Kilometer Fare",
-        o1Sub: "Highway rides (both-way calculation)",
+        o1Sub: "Highway rides (both-way calculation for round trips)",
         o1Price: "₹14 / km",
         o2Title: "Minimum Running Limit",
-        o2Sub: "Per calendar day minimum",
-        o2Price: "300 km / day",
+        o2Sub: "Round Trip: 300 km/day | One-Way: Min. 250 km",
+        o2Price: "250–300 km",
         o3Title: "Day Driver Allowance (DA)",
         o3Sub: "6:00 AM to 10:00 PM",
         o3Price: "₹300 / day",
